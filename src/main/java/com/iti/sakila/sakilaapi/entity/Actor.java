@@ -23,6 +23,7 @@ public class Actor {
     private String lastName;
 
     @Column(name = "last_update", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Instant lastUpdate;
 
     @OneToMany(mappedBy = "actor")

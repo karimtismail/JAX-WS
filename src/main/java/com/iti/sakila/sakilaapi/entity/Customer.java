@@ -39,9 +39,11 @@ public class Customer {
     private Boolean active = false;
 
     @Column(name = "create_date", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Instant createDate;
 
     @Column(name = "last_update")
+    @Temporal(TemporalType.TIMESTAMP)
     private Instant lastUpdate;
 
     @OneToMany(mappedBy = "customer")

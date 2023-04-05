@@ -23,6 +23,7 @@ public class FilmActor {
     private Film film;
 
     @Column(name = "last_update", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Instant lastUpdate;
 
     public FilmActorId getId() {

@@ -37,6 +37,7 @@ public class Address {
     private String phone;
 
     @Column(name = "last_update", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Instant lastUpdate;
 
     @OneToMany(mappedBy = "address")

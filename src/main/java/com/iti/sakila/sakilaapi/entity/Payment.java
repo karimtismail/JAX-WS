@@ -32,9 +32,11 @@ public class Payment {
     private BigDecimal amount;
 
     @Column(name = "payment_date", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Instant paymentDate;
 
     @Column(name = "last_update")
+    @Temporal(TemporalType.TIMESTAMP)
     private Instant lastUpdate;
 
     public Integer getId() {

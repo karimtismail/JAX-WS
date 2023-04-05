@@ -24,6 +24,7 @@ public class City {
     private Country country;
 
     @Column(name = "last_update", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Instant lastUpdate;
 
     @OneToMany(mappedBy = "city")

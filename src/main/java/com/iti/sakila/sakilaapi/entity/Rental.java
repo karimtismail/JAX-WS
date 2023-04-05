@@ -20,6 +20,7 @@ public class Rental {
     private Integer id;
 
     @Column(name = "rental_date", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Instant rentalDate;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
@@ -31,6 +32,7 @@ public class Rental {
     private Customer customer;
 
     @Column(name = "return_date")
+    @Temporal(TemporalType.TIMESTAMP)
     private Instant returnDate;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
@@ -38,6 +40,7 @@ public class Rental {
     private Staff staff;
 
     @Column(name = "last_update", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Instant lastUpdate;
 
     @OneToMany(mappedBy = "rental")

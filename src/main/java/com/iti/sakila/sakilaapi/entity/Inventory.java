@@ -26,6 +26,7 @@ public class Inventory {
     private Store store;
 
     @Column(name = "last_update", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Instant lastUpdate;
 
     @OneToMany(mappedBy = "inventory")

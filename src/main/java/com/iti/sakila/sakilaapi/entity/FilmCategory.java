@@ -21,6 +21,7 @@ public class FilmCategory {
     private Category category;
 
     @Column(name = "last_update", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Instant lastUpdate;
 
     public FilmCategoryId getId() {

@@ -12,11 +12,4 @@ public interface ActorMapper {
 
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
     Actor partialUpdate(ActorDto actorDto, @MappingTarget Actor actor);
-
-    Actor toEntity1(com.iti.sakila.sakilaapi.Mapper.ActorDto actorDto);
-
-    com.iti.sakila.sakilaapi.Mapper.ActorDto toDto1(Actor actor);
-
-    @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
-    Actor partialUpdate1(com.iti.sakila.sakilaapi.Mapper.ActorDto actorDto, @MappingTarget Actor actor);
 }
