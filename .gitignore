@@ -1,7 +1,0 @@
-.idea
-mvnw
-mvnw.cmd
-.mvn
-.vscode
-target/*
-pom.xml
