@@ -1,0 +1,124 @@
+{
+  "mappings": [
+    {
+      "targetPackage": "com.iti.sakila.sakilaapi.dto",
+      "targetClassName": "ActorDto",
+      "sourcePackage": "com.iti.sakila.sakilaapi.entity",
+      "sourceClassName": "Actor"
+    },
+    {
+      "targetPackage": "com.iti.sakila.sakilaapi.dto",
+      "targetClassName": "AddressDto",
+      "sourcePackage": "com.iti.sakila.sakilaapi.entity",
+      "sourceClassName": "Address"
+    },
+    {
+      "targetPackage": "com.iti.sakila.sakilaapi.dto",
+      "targetClassName": "CategoryDto",
+      "sourcePackage": "com.iti.sakila.sakilaapi.entity",
+      "sourceClassName": "Category"
+    },
+    {
+      "targetPackage": "com.iti.sakila.sakilaapi.dto",
+      "targetClassName": "CityDto",
+      "sourcePackage": "com.iti.sakila.sakilaapi.entity",
+      "sourceClassName": "City"
+    },
+    {
+      "targetPackage": "com.iti.sakila.sakilaapi.dto",
+      "targetClassName": "CountryDto",
+      "sourcePackage": "com.iti.sakila.sakilaapi.entity",
+      "sourceClassName": "Country"
+    },
+    {
+      "targetPackage": "com.iti.sakila.sakilaapi.dto",
+      "targetClassName": "CustomerDto",
+      "sourcePackage": "com.iti.sakila.sakilaapi.entity",
+      "sourceClassName": "Customer"
+    },
+    {
+      "targetPackage": "com.iti.sakila.sakilaapi.dto",
+      "targetClassName": "EmployeeDto",
+      "sourcePackage": "com.iti.sakila.sakilaapi.entity",
+      "sourceClassName": "Employee"
+    },
+    {
+      "targetPackage": "com.iti.sakila.sakilaapi.dto",
+      "targetClassName": "FilmDto",
+      "sourcePackage": "com.iti.sakila.sakilaapi.entity",
+      "sourceClassName": "Film"
+    },
+    {
+      "targetPackage": "com.iti.sakila.sakilaapi.dto",
+      "targetClassName": "FilmActorDto",
+      "sourcePackage": "com.iti.sakila.sakilaapi.entity",
+      "sourceClassName": "FilmActor"
+    },
+    {
+      "targetPackage": "com.iti.sakila.sakilaapi.dto",
+      "targetClassName": "FilmActorIdDto",
+      "sourcePackage": "com.iti.sakila.sakilaapi.entity",
+      "sourceClassName": "FilmActorId"
+    },
+    {
+      "targetPackage": "com.iti.sakila.sakilaapi.dto",
+      "targetClassName": "FilmCategoryDto",
+      "sourcePackage": "com.iti.sakila.sakilaapi.entity",
+      "sourceClassName": "FilmCategory"
+    },
+    {
+      "targetPackage": "com.iti.sakila.sakilaapi.dto",
+      "targetClassName": "FilmCategoryIdDto",
+      "sourcePackage": "com.iti.sakila.sakilaapi.entity",
+      "sourceClassName": "FilmCategoryId"
+    },
+    {
+      "targetPackage": "com.iti.sakila.sakilaapi.dto",
+      "targetClassName": "FilmTextDto",
+      "sourcePackage": "com.iti.sakila.sakilaapi.entity",
+      "sourceClassName": "FilmText"
+    },
+    {
+      "targetPackage": "com.iti.sakila.sakilaapi.dto",
+      "targetClassName": "InventoryDto",
+      "sourcePackage": "com.iti.sakila.sakilaapi.entity",
+      "sourceClassName": "Inventory"
+    },
+    {
+      "targetPackage": "com.iti.sakila.sakilaapi.dto",
+      "targetClassName": "LanguageDto",
+      "sourcePackage": "com.iti.sakila.sakilaapi.entity",
+      "sourceClassName": "Language"
+    },
+    {
+      "targetPackage": "com.iti.sakila.sakilaapi.dto",
+      "targetClassName": "PaymentDto",
+      "sourcePackage": "com.iti.sakila.sakilaapi.entity",
+      "sourceClassName": "Payment"
+    },
+    {
+      "targetPackage": "com.iti.sakila.sakilaapi.dto",
+      "targetClassName": "PersonDto",
+      "sourcePackage": "com.iti.sakila.sakilaapi.entity",
+      "sourceClassName": "Person"
+    },
+    {
+      "targetPackage": "com.iti.sakila.sakilaapi.dto",
+      "targetClassName": "RentalDto",
+      "sourcePackage": "com.iti.sakila.sakilaapi.entity",
+      "sourceClassName": "Rental"
+    },
+    {
+      "targetPackage": "com.iti.sakila.sakilaapi.dto",
+      "targetClassName": "StaffDto",
+      "sourcePackage": "com.iti.sakila.sakilaapi.entity",
+      "sourceClassName": "Staff"
+    },
+    {
+      "targetPackage": "com.iti.sakila.sakilaapi.dto",
+      "targetClassName": "StoreDto",
+      "sourcePackage": "com.iti.sakila.sakilaapi.entity",
+      "sourceClassName": "Store"
+    }
+  ]
+}
