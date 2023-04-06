@@ -40,9 +40,24 @@ The project is a Java web application that interacts with the Sakila schema data
 
 ## Usage/Examples
 
-```bash
-Open a web browser and go to http://localhost:8080/JAX/.
-```
-```bash
-The application should be up and running. You can now use it to interact with the Sakila database using SOAP and REST web services.
-```
+- Open a web browser and go to http://localhost:8080/JAX/.
+- The application should be up and running. You can now use it to interact with the Sakila database using SOAP and REST web services.
+
+## Sakila Database Information
+The Sakila database consists of 16 tables that represent various aspects of a hypothetical DVD rental store. Here is a brief overview of each table:
+- **actor** - stores actor information such as first name and last name
+- **address** - stores address information for customers and staff
+- **category** - stores movie category information
+- **city** - stores city information for customers and staff
+- **country** - stores country information for customers and staff
+- **customer** - stores customer information such as name and contact details
+- **film** - stores movie information such as title, description, and length
+- **film_actor** - stores information about the actors who played in each film
+- **film_category** - stores information about which category each film belongs to
+- **inventory** - stores information about each DVD that the rental store has in stock
+- **language** - stores information about the languages available for films
+- **payment** - stores information about customer payments
+- **rental** - stores information about movie rentals, including the date and return date
+- **staff** - stores staff information, such as name and contact details
+- **store** - stores information about the stores, including location and manager
+- **film_text** - stores the full text of the movie descriptions for searching purposes

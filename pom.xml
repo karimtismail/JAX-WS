@@ -15,6 +15,7 @@
         <maven.compiler.target>17</maven.compiler.target>
         <maven.compiler.source>17</maven.compiler.source>
         <mapstruct.version>1.5.3.Final</mapstruct.version>
+        <hibernate.version>6.0.0-SNAPSHOT</hibernate.version>
     </properties>
 
     <dependencies>
@@ -79,58 +80,64 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.bsc.maven</groupId>
-                <artifactId>maven-processor-plugin</artifactId>
-                <version>5.0-rc3</version>
-                <configuration>
-                    <defaultOutputDirectory>
-                        src/main/java/com/iti/sakila/sakilaapi/testmapper
-                    </defaultOutputDirectory>
-                    <processors>
-                        <processor>org.mapstruct.ap.MappingProcessor</processor>
-                    </processors>
-                    <options>
-                        <mapstruct.suppressGeneratorTimestamp>
-                            true
-                        </mapstruct.suppressGeneratorTimestamp>
-                        <mapstruct.defaultComponentModel>cdi</mapstruct.defaultComponentModel>
-                    </options>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>process</id>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>process</goal>
-                        </goals>
-                    </execution>
-                </executions>
+                <groupId>org.hibernate.tool</groupId>
+                <artifactId>hibernate-tools-maven</artifactId>
+                <version>6.1.7.Final</version>
                 <dependencies>
                     <dependency>
-                        <groupId>org.mapstruct</groupId>
-                        <artifactId>mapstruct-processor</artifactId>
-                        <version>${mapstruct.version}</version>
+                        <groupId>org.hibernate.tool</groupId>
+                        <artifactId>hibernate-tools-orm</artifactId>
+                        <version>6.1.7.Final</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>mysql</groupId>
+                        <artifactId>mysql-connector-java</artifactId>
+                        <version>8.0.30</version>
                     </dependency>
                 </dependencies>
+                <executions>
+                    <execution>
+                        <id>entity-generation</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>hbm2java</goal>
+                        </goals>
+                        <configuration>
+                            <ejb3>true</ejb3>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
 
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
-                <configuration>
-                    <release>17</release>
-                    <annotationProcessorPaths>
-                        <path>
-                            <groupId>org.mapstruct</groupId>
-                            <artifactId>mapstruct-processor</artifactId>
-                            <version>1.5.3.Final</version>
-                        </path>
-                        <!-- other annotation processors -->
-                    </annotationProcessorPaths>
-                </configuration>
-            </plugin>
+            <!--            <plugin>-->
+            <!--                <groupId>org.hibernate.tool</groupId>-->
+            <!--                <artifactId>hibernate-tools-maven</artifactId>-->
+            <!--                <version>6.2.0.CR4</version>-->
+            <!--                <dependencies>-->
+            <!--                    <dependency>-->
+            <!--                        <groupId>org.hibernate.tool</groupId>-->
+            <!--                        <artifactId>hibernate-tools-orm</artifactId>-->
+            <!--                        <version>6.2.0.CR4</version>-->
+            <!--                    </dependency>-->
+            <!--                    <dependency>-->
+            <!--                        <groupId>com.h2database</groupId>-->
+            <!--                        <artifactId>h2</artifactId>-->
+            <!--                        <version>2.1.214</version>-->
+            <!--                    </dependency>-->
+            <!--                </dependencies>-->
+            <!--                <executions>-->
+            <!--                    <execution>-->
+            <!--                        <id>entity-generation</id>-->
+            <!--                        <phase>generate-sources</phase>-->
+            <!--                        <goals>-->
+            <!--                            <goal>hbm2java</goal>-->
+            <!--                        </goals>-->
+            <!--                        <configuration>-->
+            <!--                            <ejb3>true</ejb3>-->
+            <!--                        </configuration>-->
+            <!--                    </execution>-->
+            <!--                </executions>-->
+            <!--            </plugin>-->
             <!-- War -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -143,45 +150,6 @@
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <version>2.2</version>
             </plugin>
-            <!--            <plugin>-->
-            <!--                &lt;!&ndash; Specify the maven code generator plugin &ndash;&gt;-->
-            <!--                &lt;!&ndash; Use org.jooq                for the Open Source Edition-->
-            <!--                         org.jooq.pro            for commercial editions with Java 17 support,-->
-            <!--                         org.jooq.pro-java-11    for commercial editions with Java 11 support,-->
-            <!--                         org.jooq.pro-java-8     for commercial editions with Java 8 support,-->
-            <!--                         org.jooq.trial          for the free trial edition with Java 17 support,-->
-            <!--                         org.jooq.trial-java-11  for the free trial edition with Java 11 support,-->
-            <!--                         org.jooq.trial-java-8   for the free trial edition with Java 8 support-->
-
-            <!--                     Note: Only the Open Source Edition is hosted on Maven Central.-->
-            <!--                           Import the others manually from your distribution &ndash;&gt;-->
-            <!--                <groupId>org.jooq</groupId>-->
-            <!--                <artifactId>jooq-codegen-maven</artifactId>-->
-            <!--                <version>3.18.2</version>-->
-
-            <!--                <executions>-->
-            <!--                    <execution>-->
-            <!--                        <id>jooq-codegen</id>-->
-            <!--                        <phase>generate-sources</phase>-->
-            <!--                        <goals>-->
-            <!--                            <goal>generate</goal>-->
-            <!--                        </goals>-->
-            <!--                    </execution>-->
-            <!--                </executions>-->
-
-            <!--                <configuration>-->
-            <!--                    <generator>-->
-            <!--                        <generate>-->
-
-            <!--                            &lt;!&ndash; Generate the DAO classes &ndash;&gt;-->
-            <!--                            <daos>true</daos>-->
-
-            <!--                        </generate>-->
-            <!--                    </generator>-->
-            <!--                </configuration>-->
-            <!--            </plugin>-->
         </plugins>
-
     </build>
-
 </project>
