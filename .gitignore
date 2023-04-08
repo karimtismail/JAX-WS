@@ -6,3 +6,4 @@ mvnw.cmd
 target/*
 mapstruct.json
 nb-configuration.xml
+.jpb

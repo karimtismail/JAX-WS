@@ -44,4 +44,11 @@ public class Actor implements Serializable {
         this.lastName = lastName;
         this.lastUpdate = lastUpdate;
     }
+
+    public Actor(Integer id, String firstName, String lastName, Instant lastUpdate) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.lastUpdate = lastUpdate;
+    }
 }

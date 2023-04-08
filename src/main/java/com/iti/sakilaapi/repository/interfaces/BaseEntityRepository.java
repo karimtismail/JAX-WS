@@ -7,5 +7,5 @@ public interface BaseEntityRepository<T, ID> {
     List<T> findAll();
     T save(T entity);
     T update(T entity);
-    boolean deleteById(ID id);
+    T deleteById(ID id);
 }

@@ -5,6 +5,7 @@ import com.iti.sakilaapi.repository.interfaces.BaseEntityRepository;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
+import org.hibernate.TransactionException;
 
 import java.util.List;
 
@@ -84,18 +85,32 @@ public class BaseEntityRepositoryImpl<T, ID> implements BaseEntityRepository<T, 
     }
 
     /**
-     * Deletes an entity by its identifier.
+     * Deletes the entity with the given ID. If the entity is already managed by the persistence context,
+     * it is deleted directly. Otherwise, the entity is re-attached to the persistence context by merging it,
+     * and then deleted.
      *
-     * @param id the identifier of the entity to delete
-     * @return {@code true} if the entity was deleted, {@code false} if no entity with the given identifier was found
+     * @param id the ID of the entity to delete
+     * @return the deleted entity, or null if no entity with the given ID was found
+     * @throws IllegalArgumentException if the given entity is detached and cannot be deleted
+     * @throws TransactionException     if an error occurs while executing the delete operation within a transaction
      */
     @Override
-    public boolean deleteById(ID id) {
+    public T deleteById(ID id) throws IllegalArgumentException, TransactionException {
         T entity = findById(id);
         if (entity != null) {
-            transactionalEntityManager.executeInTransactionWithoutResult(entityManager -> entityManager.remove(entity));
-            return true;
+            transactionalEntityManager.executeInTransactionWithoutResult(entityManager -> {
+                if (entityManager.contains(entity)) {
+                    entityManager.remove(entity);
+                } else {
+                    T managedEntity = entityManager.merge(entity);
+                    if (!entityManager.contains(managedEntity)) {
+                        throw new IllegalArgumentException("Cannot delete a detached entity");
+                    }
+                    entityManager.remove(managedEntity);
+                }
+            });
         }
-        return false;
+        return entity;
     }
+
 }

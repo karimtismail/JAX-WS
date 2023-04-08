@@ -9,15 +9,12 @@ import java.io.Serializable;
 import java.time.Instant;
 
 /**
- * A DTO for the {@link com.iti.sakilaapi.entity.Actor} entity
+ * A DTO for the {@link com.iti.sakilaapi.entity.FilmActor} entity
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-public class ActorDto implements Serializable {
-    private Integer id;
-    private String firstName;
-    private String lastName;
+public class FilmActorDto implements Serializable {
     private Instant lastUpdate;
 }
