@@ -5,22 +5,26 @@
              version="3.0">
     <persistence-unit name="sakila">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-
-
         <properties>
+            <!-- HikariCP connection pool properties -->
+            <property name="hibernate.connection.provider_class" value="com.zaxxer.hikari.hibernate.HikariConnectionProvider"/>
+            <property name="hibernate.hikari.minimumIdle" value="10" />
+            <property name="hibernate.hikari.maximumPoolSize" value="100" />
+            <property name="hibernate.hikari.idleTimeout" value="30000" />
+
             <!-- Database connection settings -->
             <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/sakila"/>
             <property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver"/>
             <property name="hibernate.connection.username" value="sakilaApi_user"/>
             <property name="hibernate.connection.password" value="1234"/>
-            <!-- Hibernate dialect -->
-            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+
+            <property name="jakarta.persistence.schema-generation.database.action" value="none"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+
             <!-- Enable logging -->
-            <property name="hibernate.show_sql" value="true"/>
-            <property name="hibernate.format_sql" value="true"/>
-            <!-- Mapping files -->
-<!--            <mapping resource="com/iti/sakilaapi/domain/Film.hbm.xml"/>-->
-            <!-- Add additional mapping files here -->
+            <!--            <property name="hibernate.show_sql" value="true"/>-->
+            <!--            <property name="hibernate.format_sql" value="true"/>-->
+
         </properties>
     </persistence-unit>
 </persistence>

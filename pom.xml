@@ -44,20 +44,24 @@
             <scope>provided</scope>
         </dependency>
 
-
         <!-- Database Dependencies -->
         <!-- Hibernate -->
         <dependency>
             <groupId>jakarta.persistence</groupId>
             <artifactId>jakarta.persistence-api</artifactId>
             <version>3.1.0</version>
-            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.hibernate.orm</groupId>
             <artifactId>hibernate-core</artifactId>
             <version>6.2.0.Final</version>
         </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>6.2.0.CR3</version>
+        </dependency>
+
         <!-- Driver -->
         <dependency>
             <groupId>com.mysql</groupId>
@@ -79,65 +83,6 @@
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.hibernate.tool</groupId>
-                <artifactId>hibernate-tools-maven</artifactId>
-                <version>6.1.7.Final</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.hibernate.tool</groupId>
-                        <artifactId>hibernate-tools-orm</artifactId>
-                        <version>6.1.7.Final</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>mysql</groupId>
-                        <artifactId>mysql-connector-java</artifactId>
-                        <version>8.0.30</version>
-                    </dependency>
-                </dependencies>
-                <executions>
-                    <execution>
-                        <id>entity-generation</id>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>hbm2java</goal>
-                        </goals>
-                        <configuration>
-                            <ejb3>true</ejb3>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <!--            <plugin>-->
-            <!--                <groupId>org.hibernate.tool</groupId>-->
-            <!--                <artifactId>hibernate-tools-maven</artifactId>-->
-            <!--                <version>6.2.0.CR4</version>-->
-            <!--                <dependencies>-->
-            <!--                    <dependency>-->
-            <!--                        <groupId>org.hibernate.tool</groupId>-->
-            <!--                        <artifactId>hibernate-tools-orm</artifactId>-->
-            <!--                        <version>6.2.0.CR4</version>-->
-            <!--                    </dependency>-->
-            <!--                    <dependency>-->
-            <!--                        <groupId>com.h2database</groupId>-->
-            <!--                        <artifactId>h2</artifactId>-->
-            <!--                        <version>2.1.214</version>-->
-            <!--                    </dependency>-->
-            <!--                </dependencies>-->
-            <!--                <executions>-->
-            <!--                    <execution>-->
-            <!--                        <id>entity-generation</id>-->
-            <!--                        <phase>generate-sources</phase>-->
-            <!--                        <goals>-->
-            <!--                            <goal>hbm2java</goal>-->
-            <!--                        </goals>-->
-            <!--                        <configuration>-->
-            <!--                            <ejb3>true</ejb3>-->
-            <!--                        </configuration>-->
-            <!--                    </execution>-->
-            <!--                </executions>-->
-            <!--            </plugin>-->
             <!-- War -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -149,6 +94,12 @@
                 <groupId>org.apache.tomcat.maven</groupId>
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <version>2.2</version>
+                <configuration>
+                    <username>root</username>
+                    <password>1234</password>
+                    <url>http://localhost:9191/manager/text</url>
+                    <path>/sakila-api</path>
+                </configuration>
             </plugin>
         </plugins>
     </build>
