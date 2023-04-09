@@ -6,6 +6,7 @@ import lombok.*;
 import java.io.Serial;
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.Date;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -33,19 +34,19 @@ public class Actor implements Serializable {
 
     @Column(name = "last_update", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
-    private Instant lastUpdate;
+    private Date lastUpdate;
 
     @OneToMany(mappedBy = "actor", cascade = CascadeType.ALL, orphanRemoval = true)
     @ToString.Exclude
     private Set<FilmActor> filmActors = new LinkedHashSet<>();
 
-    public Actor(String firstName, String lastName, Instant lastUpdate) {
+    public Actor(String firstName, String lastName, Date lastUpdate) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.lastUpdate = lastUpdate;
     }
 
-    public Actor(Integer id, String firstName, String lastName, Instant lastUpdate) {
+    public Actor(Integer id, String firstName, String lastName, Date lastUpdate) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
