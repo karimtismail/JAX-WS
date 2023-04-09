@@ -26,4 +26,14 @@
         <servlet-name>AddressService</servlet-name>
         <url-pattern>/ws/address</url-pattern>
     </servlet-mapping>
+    <!-- Category -->
+    <servlet>
+        <servlet-name>CategoryService</servlet-name>
+        <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CategoryService</servlet-name>
+        <url-pattern>/ws/category</url-pattern>
+    </servlet-mapping>
 </web-app>

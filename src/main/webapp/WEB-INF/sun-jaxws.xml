@@ -10,4 +10,9 @@
             implementation="com.iti.sakilaapi.webServices.AddressEndpoint"
             url-pattern="/ws/address"
     />
+    <endpoint
+            name="CategoryEndpointService"
+            implementation="com.iti.sakilaapi.webServices.CategoryEndpoint"
+            url-pattern="/ws/category"
+    />
 </endpoints>
