@@ -35,7 +35,7 @@ public class Actor implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Instant lastUpdate;
 
-    @OneToMany(mappedBy = "actor")
+    @OneToMany(mappedBy = "actor", cascade = CascadeType.ALL, orphanRemoval = true)
     @ToString.Exclude
     private Set<FilmActor> filmActors = new LinkedHashSet<>();
 

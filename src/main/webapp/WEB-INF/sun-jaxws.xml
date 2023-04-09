@@ -1,23 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <endpoints xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime" version="2.0">
+    <!-- Actor -->
     <endpoint
             name="ActorEndpointService"
             implementation="com.iti.sakilaapi.webServices.ActorEndpoint"
             url-pattern="/ws/actor"
     />
+    <!-- Address -->
     <endpoint
             name="AddressEndpointService"
             implementation="com.iti.sakilaapi.webServices.AddressEndpoint"
             url-pattern="/ws/address"
     />
+    <!-- Category -->
     <endpoint
             name="CategoryEndpointService"
             implementation="com.iti.sakilaapi.webServices.CategoryEndpoint"
             url-pattern="/ws/category"
     />
+    <!-- City -->
     <endpoint
             name="CityEndpointService"
             implementation="com.iti.sakilaapi.webServices.CityEndpoint"
             url-pattern="/ws/city"
+    />
+    <!-- Country -->
+    <endpoint
+            name="CountryEndpointService"
+            implementation="com.iti.sakilaapi.webServices.CountryEndpoint"
+            url-pattern="/ws/country"
+    />
+    <!-- Customer -->
+    <endpoint
+            name="CustomerEndpointService"
+            implementation="com.iti.sakilaapi.webServices.CustomerEndpoint"
+            url-pattern="/ws/customer"
     />
 </endpoints>
