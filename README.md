@@ -6,7 +6,9 @@ The project is a Java web application that interacts with the Sakila schema data
 
 ## Documentation
 Create using by postman
-- [Actor](#https://documenter.getpostman.com/view/25978326/2s93XsYS7a) 
+```
+https://documenter.getpostman.com/view/25978326/2s93XsYS7a
+``` 
 
 ## Installation
 - Clone the repository to your local machine.
