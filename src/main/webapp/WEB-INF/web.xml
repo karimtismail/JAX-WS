@@ -36,4 +36,14 @@
         <servlet-name>CategoryService</servlet-name>
         <url-pattern>/ws/category</url-pattern>
     </servlet-mapping>
+    <!-- City -->
+    <servlet>
+        <servlet-name>CityService</servlet-name>
+        <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CityService</servlet-name>
+        <url-pattern>/ws/city</url-pattern>
+    </servlet-mapping>
 </web-app>

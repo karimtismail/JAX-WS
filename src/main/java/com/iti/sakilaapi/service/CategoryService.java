@@ -36,17 +36,17 @@ public class CategoryService {
     }
 
     public CategoryDto save(Category category) {
-        Category savedAddress = categoryRepository.save(category);
-        return modelMapper.map(savedAddress, CategoryDto.class);
+        Category savedCateogry = categoryRepository.save(category);
+        return modelMapper.map(savedCateogry, CategoryDto.class);
     }
 
     public CategoryDto update(Category category) {
-        Category updatedAddress = categoryRepository.update(category);
-        return modelMapper.map(updatedAddress, CategoryDto.class);
+        Category updatedCateogry = categoryRepository.update(category);
+        return modelMapper.map(updatedCateogry, CategoryDto.class);
     }
 
     public CategoryDto deleteById(Short categoryId) {
-        Category deleteAddress = categoryRepository.deleteById(categoryId);
-        return modelMapper.map(deleteAddress, CategoryDto.class);
+        Category deleteCateogry = categoryRepository.deleteById(categoryId);
+        return modelMapper.map(deleteCateogry, CategoryDto.class);
     }
 }

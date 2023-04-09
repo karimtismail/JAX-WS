@@ -15,4 +15,9 @@
             implementation="com.iti.sakilaapi.webServices.CategoryEndpoint"
             url-pattern="/ws/category"
     />
+    <endpoint
+            name="CityEndpointService"
+            implementation="com.iti.sakilaapi.webServices.CityEndpoint"
+            url-pattern="/ws/city"
+    />
 </endpoints>
