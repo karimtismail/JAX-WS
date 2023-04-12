@@ -1,7 +1,7 @@
 package com.iti.sakilaapi.service;
 
-import com.iti.sakilaapi.dto.AddressDto;
-import com.iti.sakilaapi.entity.Address;
+import com.iti.sakilaapi.model.dto.AddressDto;
+import com.iti.sakilaapi.model.entity.Address;
 import com.iti.sakilaapi.repository.implementation.AddressRepositoryImpl;
 import com.iti.sakilaapi.repository.interfaces.AddressRepository;
 import org.modelmapper.ModelMapper;

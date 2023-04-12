@@ -3,37 +3,37 @@
     <!-- Actor -->
     <endpoint
             name="ActorEndpointService"
-            implementation="com.iti.sakilaapi.webServices.ActorEndpoint"
+            implementation="com.iti.sakilaapi.api.ActorEndpoint"
             url-pattern="/ws/actor"
     />
     <!-- Address -->
     <endpoint
             name="AddressEndpointService"
-            implementation="com.iti.sakilaapi.webServices.AddressEndpoint"
+            implementation="com.iti.sakilaapi.api.AddressEndpoint"
             url-pattern="/ws/address"
     />
     <!-- Category -->
     <endpoint
             name="CategoryEndpointService"
-            implementation="com.iti.sakilaapi.webServices.CategoryEndpoint"
+            implementation="com.iti.sakilaapi.api.CategoryEndpoint"
             url-pattern="/ws/category"
     />
     <!-- City -->
     <endpoint
             name="CityEndpointService"
-            implementation="com.iti.sakilaapi.webServices.CityEndpoint"
+            implementation="com.iti.sakilaapi.api.CityEndpoint"
             url-pattern="/ws/city"
     />
     <!-- Country -->
     <endpoint
             name="CountryEndpointService"
-            implementation="com.iti.sakilaapi.webServices.CountryEndpoint"
+            implementation="com.iti.sakilaapi.api.CountryEndpoint"
             url-pattern="/ws/country"
     />
     <!-- Customer -->
     <endpoint
             name="CustomerEndpointService"
-            implementation="com.iti.sakilaapi.webServices.CustomerEndpoint"
+            implementation="com.iti.sakilaapi.api.CustomerEndpoint"
             url-pattern="/ws/customer"
     />
 </endpoints>

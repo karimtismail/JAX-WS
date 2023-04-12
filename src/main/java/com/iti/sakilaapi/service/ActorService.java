@@ -1,7 +1,7 @@
 package com.iti.sakilaapi.service;
 
-import com.iti.sakilaapi.dto.ActorDto;
-import com.iti.sakilaapi.entity.Actor;
+import com.iti.sakilaapi.model.dto.ActorDto;
+import com.iti.sakilaapi.model.entity.Actor;
 import com.iti.sakilaapi.repository.implementation.ActorRepositoryImpl;
 import com.iti.sakilaapi.repository.interfaces.ActorRepository;
 import org.modelmapper.ModelMapper;

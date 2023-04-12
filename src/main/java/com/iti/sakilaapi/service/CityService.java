@@ -1,7 +1,7 @@
 package com.iti.sakilaapi.service;
 
-import com.iti.sakilaapi.dto.CityDto;
-import com.iti.sakilaapi.entity.City;
+import com.iti.sakilaapi.model.dto.CityDto;
+import com.iti.sakilaapi.model.entity.City;
 import com.iti.sakilaapi.repository.implementation.CityRepositoryImpl;
 import com.iti.sakilaapi.repository.interfaces.CityRepository;
 import org.modelmapper.ModelMapper;

@@ -1,7 +1,7 @@
 package com.iti.sakilaapi.service;
 
-import com.iti.sakilaapi.dto.CountryDto;
-import com.iti.sakilaapi.entity.Country;
+import com.iti.sakilaapi.model.dto.CountryDto;
+import com.iti.sakilaapi.model.entity.Country;
 import com.iti.sakilaapi.repository.implementation.CountryRepositoryImpl;
 import com.iti.sakilaapi.repository.interfaces.CountryRepository;
 import org.modelmapper.ModelMapper;

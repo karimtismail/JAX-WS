@@ -1,6 +1,6 @@
 package com.iti.sakilaapi.repository.implementation;
 
-import com.iti.sakilaapi.entity.Address;
+import com.iti.sakilaapi.model.entity.Address;
 import com.iti.sakilaapi.repository.TransactionalEntityManager;
 import com.iti.sakilaapi.repository.interfaces.AddressRepository;
 
