@@ -14,7 +14,7 @@ https://documenter.getpostman.com/view/25978326/2s93XsYS7a
 - Clone the repository to your local machine.
 
 ```bash
-  git clone https://github.com/karimtismail/JAX-WS.git
+  git clone https://github.com/karimtismail/Sakila-SOAP-API.git
 ```
 
 - Navigate to the project directory.
