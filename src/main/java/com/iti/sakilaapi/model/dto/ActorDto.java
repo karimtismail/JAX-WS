@@ -20,9 +20,9 @@ public class ActorDto implements Serializable {
     private String firstName;
     private String lastName;
     private Date lastUpdate;
-    public ActorDto(String firstName, String lastName, Date lastUpdate) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.lastUpdate = lastUpdate;
-    }
+//    public ActorDto(String firstName, String lastName, Date lastUpdate) {
+//        this.firstName = firstName;
+//        this.lastName = lastName;
+//        this.lastUpdate = lastUpdate;
+//    }
 }

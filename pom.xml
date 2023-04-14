@@ -99,29 +99,41 @@
             <groupId>jakarta.xml.ws</groupId>
             <artifactId>jakarta.xml.ws-api</artifactId>
             <version>4.0.0</version>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>com.sun.xml.ws</groupId>
             <artifactId>jaxws-rt</artifactId>
             <version>4.0.1</version>
-            <scope>runtime</scope>
         </dependency>
-        <dependency>
-            <groupId>com.sun.tools.ws</groupId>
-            <artifactId>webservices-tools</artifactId>
-            <version>@metro.version@</version>
-        </dependency>
-        <dependency>
-            <groupId>org.glassfish.metro</groupId>
-            <artifactId>webservices-tools</artifactId>
-            <version>4.0.2</version>
-        </dependency>
-        <dependency>
-            <groupId>com.moparisthebest.aptIn16</groupId>
-            <artifactId>apt-mirror-api</artifactId>
-            <version>0.1</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.sun.xml.ws</groupId>-->
+<!--            <artifactId>webservices-rt</artifactId>-->
+<!--            <version>@metro.version@</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.glassfish.metro</groupId>-->
+<!--            <artifactId>webservices-tools</artifactId>-->
+<!--            <version>4.0.2</version>-->
+<!--        </dependency>-->
+
+<!--        &lt;!&ndash;        &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.glassfish.metro</groupId>-->
+<!--            <artifactId>webservices-rt</artifactId>-->
+<!--            <version>4.0.2</version>-->
+<!--        </dependency>-->
+
+<!--        <dependency>-->
+<!--            <groupId>org.glassfish.metro</groupId>-->
+<!--            <artifactId>webservices-api</artifactId>-->
+<!--            <version>4.0.2</version>-->
+<!--        </dependency>-->
+
+<!--        <dependency>-->
+<!--            <groupId>com.moparisthebest.aptIn16</groupId>-->
+<!--            <artifactId>apt-mirror-api</artifactId>-->
+<!--            <version>0.1</version>-->
+<!--        </dependency>-->
 
     </dependencies>
 
@@ -149,7 +161,7 @@
                 <configuration>
                     <username>root</username>
                     <password>1234</password>
-                    <url>http://localhost:9191/manager/text</url>
+                    <url>http://localhost:9192/manager/text</url>
                     <path>/sakila-api</path>
                 </configuration>
             </plugin>

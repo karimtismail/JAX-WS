@@ -15,7 +15,7 @@ public class ActorEndpoint {
     private final ActorService actorService;
 
     public ActorEndpoint() {
-        actorService = new ActorService();
+        actorService = new ActorService(Actor.class, ActorDto.class);
     }
 
     @WebResult(name = "Actor")

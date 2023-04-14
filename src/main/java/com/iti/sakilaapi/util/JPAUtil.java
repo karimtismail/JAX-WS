@@ -5,7 +5,7 @@ import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
 public class JPAUtil {
-    private static EntityManagerFactory emf = null;
+    private volatile static EntityManagerFactory emf = null;
 
     private JPAUtil() {
     }
@@ -21,9 +21,9 @@ public class JPAUtil {
         return emf;
     }
 
-    public static EntityManager getEntityManager() {
-        return getEntityManagerFactory().createEntityManager();
-    }
+//    public static EntityManager getEntityManager() {
+//        return getEntityManagerFactory().createEntityManager();
+//    }
 
     public static void closeEntityManagerFactory() {
         if (emf != null) {
