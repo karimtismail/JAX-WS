@@ -8,8 +8,7 @@ Sakila database and retrieve the desired information.
 Our application is built with Java 17 and Apache Maven 3.8.6, and uses MySQL for the database. To install and deploy the
 project, clone the repository to your local machine and follow the instructions in the README file.
 
-The project also includes a Postman documenter to aid in API documentation, which can be accessed
-here: https://documenter.getpostman.com/view/25978326/2s93XsYS7a.
+The project is equipped with a Postman documenter to facilitate API documentation, which is accessible at https://documenter.getpostman.com/view/25978326/2s93XsYS7a. Additionally, all services are documented in the "documentation" folder.
 
 ## Technologies Used:
 
