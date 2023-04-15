@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
@@ -32,17 +32,13 @@
             <version>1.18.26</version>
             <scope>provided</scope>
         </dependency>
+        <!-- JSON Format -->
         <dependency>
-            <groupId>org.mapstruct</groupId>
-            <artifactId>mapstruct</artifactId>
-            <version>${mapstruct.version}</version>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.15.0-rc2</version>
         </dependency>
-        <dependency>
-            <groupId>org.mapstruct</groupId>
-            <artifactId>mapstruct-processor</artifactId>
-            <version>${mapstruct.version}</version>
-            <scope>provided</scope>
-        </dependency>
+
         <!-- Database Dependencies -->
         <!-- Jakarta Persistence API -->
         <dependency>
@@ -105,35 +101,35 @@
             <artifactId>jaxws-rt</artifactId>
             <version>4.0.1</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>com.sun.xml.ws</groupId>-->
-<!--            <artifactId>webservices-rt</artifactId>-->
-<!--            <version>@metro.version@</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.glassfish.metro</groupId>-->
-<!--            <artifactId>webservices-tools</artifactId>-->
-<!--            <version>4.0.2</version>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.sun.xml.ws</groupId>-->
+        <!--            <artifactId>webservices-rt</artifactId>-->
+        <!--            <version>@metro.version@</version>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.glassfish.metro</groupId>-->
+        <!--            <artifactId>webservices-tools</artifactId>-->
+        <!--            <version>4.0.2</version>-->
+        <!--        </dependency>-->
 
-<!--        &lt;!&ndash;        &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.glassfish.metro</groupId>-->
-<!--            <artifactId>webservices-rt</artifactId>-->
-<!--            <version>4.0.2</version>-->
-<!--        </dependency>-->
+        <!--        &lt;!&ndash;        &ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.glassfish.metro</groupId>-->
+        <!--            <artifactId>webservices-rt</artifactId>-->
+        <!--            <version>4.0.2</version>-->
+        <!--        </dependency>-->
 
-<!--        <dependency>-->
-<!--            <groupId>org.glassfish.metro</groupId>-->
-<!--            <artifactId>webservices-api</artifactId>-->
-<!--            <version>4.0.2</version>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.glassfish.metro</groupId>-->
+        <!--            <artifactId>webservices-api</artifactId>-->
+        <!--            <version>4.0.2</version>-->
+        <!--        </dependency>-->
 
-<!--        <dependency>-->
-<!--            <groupId>com.moparisthebest.aptIn16</groupId>-->
-<!--            <artifactId>apt-mirror-api</artifactId>-->
-<!--            <version>0.1</version>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.moparisthebest.aptIn16</groupId>-->
+        <!--            <artifactId>apt-mirror-api</artifactId>-->
+        <!--            <version>0.1</version>-->
+        <!--        </dependency>-->
 
     </dependencies>
 

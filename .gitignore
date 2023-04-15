@@ -7,3 +7,5 @@ target/*
 mapstruct.json
 nb-configuration.xml
 .jpb
+/target/
+/bin/

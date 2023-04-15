@@ -15,7 +15,7 @@ public class AddressEndpoint {
     private final AddressService addressService;
 
     public AddressEndpoint() {
-        addressService = new AddressService();
+        addressService = new AddressService(Address.class, AddressDto.class);
     }
 
     @WebResult(name = "Address")

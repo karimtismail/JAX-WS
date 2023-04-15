@@ -1,14 +1,17 @@
 package com.iti.sakilaapi.model.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.io.Serial;
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.time.Instant;
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -65,15 +68,15 @@ public class Film implements Serializable {
     private String specialFeatures;
 
     @Column(name = "last_update", nullable = false)
-    private Instant lastUpdate;
+    private Date lastUpdate;
 
     @OneToMany(mappedBy = "film")
-    private Set<Inventory> inventories = new LinkedHashSet<>();
+    private List<Inventory> inventories = new ArrayList<>();
 
     @OneToMany(mappedBy = "film")
-    private Set<FilmActor> filmActors = new LinkedHashSet<>();
+    private List<FilmActor> filmActors = new ArrayList<>();
 
     @OneToMany(mappedBy = "film")
-    private Set<FilmCategory> filmCategories = new LinkedHashSet<>();
+    private List<FilmCategory> filmCategories = new ArrayList<>();
 
 }

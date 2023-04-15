@@ -1,13 +1,16 @@
 package com.iti.sakilaapi.model.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.io.Serial;
 import java.io.Serializable;
-import java.time.Instant;
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -35,9 +38,8 @@ public class Inventory implements Serializable {
     private Store store;
 
     @Column(name = "last_update", nullable = false)
-    private Instant lastUpdate;
+    private Date lastUpdate;
 
-    @OneToMany(mappedBy = "inventory")
-    private Set<Rental> rentals = new LinkedHashSet<>();
-
+    @OneToMany(mappedBy = "inventory", cascade = CascadeType.ALL)
+    private List<Rental> rentals = new ArrayList<>();
 }

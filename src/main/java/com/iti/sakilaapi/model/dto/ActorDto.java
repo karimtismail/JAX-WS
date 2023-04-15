@@ -1,28 +1,20 @@
 package com.iti.sakilaapi.model.dto;
 
+import jakarta.xml.bind.annotation.XmlRootElement;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * A DTO for the {@link com.iti.sakilaapi.model.entity.Actor} entity
- */
+@XmlRootElement
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-@Accessors(chain = true)
+@AllArgsConstructor
 public class ActorDto implements Serializable {
-    private Integer id;
+    private Short actorId;
     private String firstName;
     private String lastName;
     private Date lastUpdate;
-//    public ActorDto(String firstName, String lastName, Date lastUpdate) {
-//        this.firstName = firstName;
-//        this.lastName = lastName;
-//        this.lastUpdate = lastUpdate;
-//    }
 }

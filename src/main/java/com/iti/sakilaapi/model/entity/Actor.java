@@ -5,9 +5,9 @@ import lombok.*;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -37,7 +37,7 @@ public class Actor implements Serializable {
 
     @OneToMany(mappedBy = "actor", cascade = CascadeType.ALL, orphanRemoval = true)
     @ToString.Exclude
-    private Set<FilmActor> filmActors = new LinkedHashSet<>();
+    private List<FilmActor> films = new ArrayList<>();
 
     public Actor(String firstName, String lastName, Date lastUpdate) {
         this.firstName = firstName;

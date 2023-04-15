@@ -15,7 +15,7 @@ public class CityEndpoint {
     private final CityService cityService;
 
     public CityEndpoint() {
-        cityService = new CityService();
+        cityService = new CityService(City.class, CityDto.class);
     }
 
     @WebResult(name = "City")

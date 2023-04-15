@@ -31,13 +31,13 @@ public class ActorEndpoint {
     }
 
     @WebResult(name = "Actor")
-    @WebMethod(operationName = "createActor")
+    @WebMethod(operationName = "createNewActor")
     public ActorDto createActor(@WebParam(name = "actor") Actor actor) {
         return actorService.save(actor);
     }
 
     @WebResult(name = "Actor")
-    @WebMethod(operationName = "updateActor")
+    @WebMethod(operationName = "updateExistingActor")
     public ActorDto updateActor(@WebParam(name = "actor") Actor actor) {
         return actorService.update(actor);
     }

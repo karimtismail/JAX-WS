@@ -15,7 +15,7 @@ public class CategoryEndpoint {
     private final CategoryService categoryService;
 
     public CategoryEndpoint() {
-        categoryService = new CategoryService();
+        categoryService = new CategoryService(Category.class, CategoryDto.class);
     }
 
     @WebResult(name = "Category")

@@ -1,7 +1,10 @@
 package com.iti.sakilaapi.api;
 
+import com.iti.sakilaapi.model.dto.CityDto;
 import com.iti.sakilaapi.model.dto.CustomerDto;
+import com.iti.sakilaapi.model.entity.City;
 import com.iti.sakilaapi.model.entity.Customer;
+import com.iti.sakilaapi.service.CityService;
 import com.iti.sakilaapi.service.CustomerService;
 import jakarta.jws.WebMethod;
 import jakarta.jws.WebParam;
@@ -15,7 +18,7 @@ public class CustomerEndpoint {
     private final CustomerService customerService;
 
     public CustomerEndpoint() {
-        customerService = new CustomerService();
+        customerService = new CustomerService(Customer.class, CustomerDto.class);
     }
 
     @WebResult(name = "Customer")

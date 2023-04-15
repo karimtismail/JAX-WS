@@ -1,34 +1,48 @@
 package com.iti.sakilaapi.util;
 
-import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
+/**
+ * The JPAUtil class provides a utility method for creating and managing an
+ * EntityManagerFactory.
+ */
 public class JPAUtil {
-    private volatile static EntityManagerFactory emf = null;
+    /**
+     * The singleton instance of the EntityManagerFactory.
+     */
+    private volatile static EntityManagerFactory entityManagerFactory = null;
 
+    /**
+     * Private constructor to prevent instantiation of JPAUtil.
+     */
     private JPAUtil() {
     }
 
+    /**
+     * Returns the singleton instance of EntityManagerFactory. If the instance
+     * does not exist, it is created.
+     *
+     * @return EntityManagerFactory singleton instance.
+     */
     public static EntityManagerFactory getEntityManagerFactory() {
-        if (emf == null) {
+        if (entityManagerFactory == null) {
             synchronized (JPAUtil.class) {
-                if (emf == null) {
-                    emf = Persistence.createEntityManagerFactory("sakila");
+                if (entityManagerFactory == null) {
+                    entityManagerFactory = Persistence.createEntityManagerFactory("sakila");
                 }
             }
         }
-        return emf;
+        return entityManagerFactory;
     }
 
-//    public static EntityManager getEntityManager() {
-//        return getEntityManagerFactory().createEntityManager();
-//    }
-
+    /**
+     * Closes the EntityManagerFactory if it exists and sets the instance to null.
+     */
     public static void closeEntityManagerFactory() {
-        if (emf != null) {
-            emf.close();
-            emf = null;
+        if (entityManagerFactory != null) {
+            entityManagerFactory.close();
+            entityManagerFactory = null;
         }
     }
 }

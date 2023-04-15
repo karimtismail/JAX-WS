@@ -1,26 +1,23 @@
 package com.iti.sakilaapi.model.dto;
 
+import jakarta.xml.bind.annotation.XmlRootElement;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.util.Date;
 
-/**
- * A DTO for the {@link com.iti.sakilaapi.model.entity.Customer} entity
- */
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-@Accessors(chain = true)
+@AllArgsConstructor
+@XmlRootElement
 public class CustomerDto implements Serializable {
-    private Integer id;
+    private Short customerId;
     private String firstName;
     private String lastName;
     private String email;
-    private Boolean active = false;
-    private Instant createDate;
-    private Instant lastUpdate;
+    private boolean active;
+    private Date createDate;
+    private Date lastUpdate;
 }

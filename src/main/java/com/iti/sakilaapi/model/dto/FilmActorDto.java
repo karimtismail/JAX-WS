@@ -1,20 +1,23 @@
 package com.iti.sakilaapi.model.dto;
 
+import jakarta.xml.bind.annotation.XmlRootElement;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.util.Date;
 
-/**
- * A DTO for the {@link com.iti.sakilaapi.model.entity.FilmActor} entity
- */
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-@Accessors(chain = true)
+@AllArgsConstructor
+@XmlRootElement
 public class FilmActorDto implements Serializable {
-    private Instant lastUpdate;
+    private FilmActorPKDto filmActorPK;
+    private Date lastUpdate;
+    @Data
+    public static class FilmActorPKDto implements Serializable {
+        private final short actorId;
+        private final short filmId;
+    }
 }

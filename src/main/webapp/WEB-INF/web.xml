@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="https://jakarta.ee/xml/ns/jakartaee"
          xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
          version="6.0">
     <listener>
@@ -17,53 +17,53 @@
         <url-pattern>/ws/*</url-pattern>
     </servlet-mapping>
     <!-- Address -->
-<!--    <servlet>-->
-<!--        <servlet-name>AddressService</servlet-name>-->
-<!--        <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>-->
-<!--        <load-on-startup>1</load-on-startup>-->
-<!--    </servlet>-->
-<!--    <servlet-mapping>-->
-<!--        <servlet-name>AddressService</servlet-name>-->
-<!--        <url-pattern>/ws/address</url-pattern>-->
-<!--    </servlet-mapping>-->
-<!--    &lt;!&ndash; Category &ndash;&gt;-->
-<!--    <servlet>-->
-<!--        <servlet-name>CategoryService</servlet-name>-->
-<!--        <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>-->
-<!--        <load-on-startup>1</load-on-startup>-->
-<!--    </servlet>-->
-<!--    <servlet-mapping>-->
-<!--        <servlet-name>CategoryService</servlet-name>-->
-<!--        <url-pattern>/ws/category</url-pattern>-->
-<!--    </servlet-mapping>-->
-<!--    &lt;!&ndash; City &ndash;&gt;-->
-<!--    <servlet>-->
-<!--        <servlet-name>CityService</servlet-name>-->
-<!--        <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>-->
-<!--        <load-on-startup>1</load-on-startup>-->
-<!--    </servlet>-->
-<!--    <servlet-mapping>-->
-<!--        <servlet-name>CityService</servlet-name>-->
-<!--        <url-pattern>/ws/city</url-pattern>-->
-<!--    </servlet-mapping>-->
-<!--    &lt;!&ndash; Country &ndash;&gt;-->
-<!--    <servlet>-->
-<!--        <servlet-name>CountryService</servlet-name>-->
-<!--        <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>-->
-<!--        <load-on-startup>1</load-on-startup>-->
-<!--    </servlet>-->
-<!--    <servlet-mapping>-->
-<!--        <servlet-name>CountryService</servlet-name>-->
-<!--        <url-pattern>/ws/country</url-pattern>-->
-<!--    </servlet-mapping>-->
-<!--    &lt;!&ndash; Customer &ndash;&gt;-->
-<!--    <servlet>-->
-<!--        <servlet-name>CustomerService</servlet-name>-->
-<!--        <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>-->
-<!--        <load-on-startup>1</load-on-startup>-->
-<!--    </servlet>-->
-<!--    <servlet-mapping>-->
-<!--        <servlet-name>CustomerService</servlet-name>-->
-<!--        <url-pattern>/ws/customer</url-pattern>-->
-<!--    </servlet-mapping>-->
+    <!--    <servlet>-->
+    <!--        <servlet-name>AddressService</servlet-name>-->
+    <!--        <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>-->
+    <!--        <load-on-startup>1</load-on-startup>-->
+    <!--    </servlet>-->
+    <!--    <servlet-mapping>-->
+    <!--        <servlet-name>AddressService</servlet-name>-->
+    <!--        <url-pattern>/ws/address</url-pattern>-->
+    <!--    </servlet-mapping>-->
+    <!--    &lt;!&ndash; Category &ndash;&gt;-->
+    <!--    <servlet>-->
+    <!--        <servlet-name>CategoryService</servlet-name>-->
+    <!--        <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>-->
+    <!--        <load-on-startup>1</load-on-startup>-->
+    <!--    </servlet>-->
+    <!--    <servlet-mapping>-->
+    <!--        <servlet-name>CategoryService</servlet-name>-->
+    <!--        <url-pattern>/ws/category</url-pattern>-->
+    <!--    </servlet-mapping>-->
+    <!--    &lt;!&ndash; City &ndash;&gt;-->
+    <!--    <servlet>-->
+    <!--        <servlet-name>CityService</servlet-name>-->
+    <!--        <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>-->
+    <!--        <load-on-startup>1</load-on-startup>-->
+    <!--    </servlet>-->
+    <!--    <servlet-mapping>-->
+    <!--        <servlet-name>CityService</servlet-name>-->
+    <!--        <url-pattern>/ws/city</url-pattern>-->
+    <!--    </servlet-mapping>-->
+    <!--    &lt;!&ndash; Country &ndash;&gt;-->
+    <!--    <servlet>-->
+    <!--        <servlet-name>CountryService</servlet-name>-->
+    <!--        <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>-->
+    <!--        <load-on-startup>1</load-on-startup>-->
+    <!--    </servlet>-->
+    <!--    <servlet-mapping>-->
+    <!--        <servlet-name>CountryService</servlet-name>-->
+    <!--        <url-pattern>/ws/country</url-pattern>-->
+    <!--    </servlet-mapping>-->
+    <!--    &lt;!&ndash; Customer &ndash;&gt;-->
+    <!--    <servlet>-->
+    <!--        <servlet-name>CustomerService</servlet-name>-->
+    <!--        <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>-->
+    <!--        <load-on-startup>1</load-on-startup>-->
+    <!--    </servlet>-->
+    <!--    <servlet-mapping>-->
+    <!--        <servlet-name>CustomerService</servlet-name>-->
+    <!--        <url-pattern>/ws/customer</url-pattern>-->
+    <!--    </servlet-mapping>-->
 </web-app>

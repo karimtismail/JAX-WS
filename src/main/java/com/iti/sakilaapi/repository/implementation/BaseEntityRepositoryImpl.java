@@ -18,7 +18,7 @@ import java.util.List;
  */
 public class BaseEntityRepositoryImpl<T, ID> implements BaseEntityRepository<T, ID> {
 
-    private final TransactionalEntityManager transactionalEntityManager;
+    protected final TransactionalEntityManager transactionalEntityManager;
     private final Class<T> entityClass;
 
     /**

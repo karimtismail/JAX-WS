@@ -1,7 +1,10 @@
 package com.iti.sakilaapi.model.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -57,7 +60,7 @@ public class Address implements Serializable {
     private Set<Customer> customers = new LinkedHashSet<>();
 
 
-//    TODO [JPA Buddy] create field to map the 'location' column
+    //    TODO [JPA Buddy] create field to map the 'location' column
 //     Available actions: Define target Java type | Uncomment as is | Remove column mapping
     @Column(name = "location", columnDefinition = "GEOMETRY(65535) not null")
     private Object location;

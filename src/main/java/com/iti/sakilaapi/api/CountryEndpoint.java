@@ -15,7 +15,7 @@ public class CountryEndpoint {
     private final CountryService countryService;
 
     public CountryEndpoint() {
-        countryService = new CountryService();
+        countryService = new CountryService(Country.class, CountryDto.class);
     }
 
     @WebResult(name = "Country")

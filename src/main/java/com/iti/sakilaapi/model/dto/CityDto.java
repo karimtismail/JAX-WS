@@ -1,22 +1,21 @@
 package com.iti.sakilaapi.model.dto;
 
+import jakarta.xml.bind.annotation.XmlRootElement;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.util.Date;
 
-/**
- * A DTO for the {@link com.iti.sakilaapi.model.entity.City} entity
- */
-@Data
+@XmlRootElement
 @AllArgsConstructor
 @NoArgsConstructor
-@Accessors(chain = true)
+@Data
 public class CityDto implements Serializable {
-    private Integer id;
+    private Short cityId;
     private String city;
-    private Instant lastUpdate;
+    private Date lastUpdate;
+    private short countryID;
+    private String countryName;
 }

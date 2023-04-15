@@ -1,16 +1,23 @@
 # JAX-WS
+
 Brief description of the project.
 
 ## Introduction
-The project is a Java web application that interacts with the Sakila schema database using SOAP and REST web services. The application uses JPA to manage relational data and DAO (Data Access Object) to create repositories for accessing the data. The web services are deployed on Apache Tomcat, a web server and servlet container.
+
+The project is a Java web application that interacts with the Sakila schema database using SOAP and REST web services.
+The application uses JPA to manage relational data and DAO (Data Access Object) to create repositories for accessing the
+data. The web services are deployed on Apache Tomcat, a web server and servlet container.
 
 ## Documentation
+
 Create using by postman
+
 ```
 https://documenter.getpostman.com/view/25978326/2s93XsYS7a
 ``` 
 
 ## Installation
+
 - Clone the repository to your local machine.
 
 ```bash
@@ -18,11 +25,13 @@ https://documenter.getpostman.com/view/25978326/2s93XsYS7a
 ```
 
 - Navigate to the project directory.
+
 ```bash    
   cd JAX-WS
 ```
 
 - Build the project using Maven.
+
 ```bash
   mvn clean package
 ````
@@ -36,6 +45,7 @@ https://documenter.getpostman.com/view/25978326/2s93XsYS7a
 ```
 
 - Start Tomcat server.
+
 ```bash
   cd /path/to/tomcat/bin
   ./startup.sh
@@ -44,10 +54,14 @@ https://documenter.getpostman.com/view/25978326/2s93XsYS7a
 ## Usage/Examples
 
 - Open a web browser and go to http://localhost:8080/JAX/.
-- The application should be up and running. You can now use it to interact with the Sakila database using SOAP and REST web services.
+- The application should be up and running. You can now use it to interact with the Sakila database using SOAP and REST
+  web services.
 
 ## Sakila Database Information
-The Sakila database consists of 16 tables that represent various aspects of a hypothetical DVD rental store. Here is a brief overview of each table:
+
+The Sakila database consists of 16 tables that represent various aspects of a hypothetical DVD rental store. Here is a
+brief overview of each table:
+
 - **actor** - stores actor information such as first name and last name
 - **address** - stores address information for customers and staff
 - **category** - stores movie category information

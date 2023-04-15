@@ -7,34 +7,46 @@
             implementation="com.iti.sakilaapi.api.ActorEndpoint"
             url-pattern="/ws/actor"
     />
-<!--    &lt;!&ndash; Address &ndash;&gt;-->
-<!--    <endpoint-->
-<!--            name="AddressEndpointService"-->
-<!--            implementation="com.iti.sakilaapi.api.AddressEndpoint"-->
-<!--            url-pattern="/ws/address"-->
-<!--    />-->
-<!--    &lt;!&ndash; Category &ndash;&gt;-->
-<!--    <endpoint-->
-<!--            name="CategoryEndpointService"-->
-<!--            implementation="com.iti.sakilaapi.api.CategoryEndpoint"-->
-<!--            url-pattern="/ws/category"-->
-<!--    />-->
-<!--    &lt;!&ndash; City &ndash;&gt;-->
-<!--    <endpoint-->
-<!--            name="CityEndpointService"-->
-<!--            implementation="com.iti.sakilaapi.api.CityEndpoint"-->
-<!--            url-pattern="/ws/city"-->
-<!--    />-->
-<!--    &lt;!&ndash; Country &ndash;&gt;-->
-<!--    <endpoint-->
-<!--            name="CountryEndpointService"-->
-<!--            implementation="com.iti.sakilaapi.api.CountryEndpoint"-->
-<!--            url-pattern="/ws/country"-->
-<!--    />-->
-<!--    &lt;!&ndash; Customer &ndash;&gt;-->
-<!--    <endpoint-->
-<!--            name="CustomerEndpointService"-->
-<!--            implementation="com.iti.sakilaapi.api.CustomerEndpoint"-->
-<!--            url-pattern="/ws/customer"-->
-<!--    />-->
+    <!-- Address -->
+    <endpoint
+            name="AddressEndpointService"
+            implementation="com.iti.sakilaapi.api.AddressEndpoint"
+            url-pattern="/ws/address"
+    />
+    <!-- Category -->
+    <endpoint
+            name="CategoryEndpointService"
+            implementation="com.iti.sakilaapi.api.CategoryEndpoint"
+            url-pattern="/ws/category"
+    />
+    <!-- City -->
+    <endpoint
+            name="CityEndpointService"
+            implementation="com.iti.sakilaapi.api.CityEndpoint"
+            url-pattern="/ws/city"
+    />
+    <!-- Country -->
+    <endpoint
+            name="CountryEndpointService"
+            implementation="com.iti.sakilaapi.api.CountryEndpoint"
+            url-pattern="/ws/country"
+    />
+    <!-- Customer -->
+    <endpoint
+            name="CustomerEndpointService"
+            implementation="com.iti.sakilaapi.api.CustomerEndpoint"
+            url-pattern="/ws/customer"
+    />
+    <!-- Inventory -->
+    <endpoint
+            name="InventoryEndpointService"
+            implementation="com.iti.sakilaapi.api.InventoryEndPoint"
+            url-pattern="/ws/inventory"
+    />
+    <!-- Staff -->
+    <endpoint
+            name="StaffEndpointService"
+            implementation="com.iti.sakilaapi.api.StaffEndPoint"
+            url-pattern="/ws/staff"
+    />
 </endpoints>

@@ -1,12 +1,15 @@
 package com.iti.sakilaapi.model.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.io.Serial;
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.time.Instant;
+import java.util.Date;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -41,9 +44,9 @@ public class Payment implements Serializable {
     private BigDecimal amount;
 
     @Column(name = "payment_date", nullable = false)
-    private Instant paymentDate;
+    private Date paymentDate;
 
     @Column(name = "last_update")
-    private Instant lastUpdate;
+    private Date lastUpdate;
 
 }
