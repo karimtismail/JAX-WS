@@ -8,7 +8,7 @@ import lombok.Setter;
 
 import java.io.Serial;
 import java.io.Serializable;
-import java.time.Instant;
+import java.util.Date;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -51,10 +51,12 @@ public class Customer implements Serializable {
     private Boolean active = false;
 
     @Column(name = "create_date", nullable = false)
-    private Instant createDate;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date createDate;
 
     @Column(name = "last_update")
-    private Instant lastUpdate;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date lastUpdate;
 
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
     private Set<Payment> payments = new LinkedHashSet<>();

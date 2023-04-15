@@ -17,21 +17,18 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
-@Table(name = "rental", schema = "sakila", indexes = {
-        @Index(name = "idx_fk_inventory_id", columnList = "inventory_id"),
-        @Index(name = "rental_date", columnList = "rental_date, inventory_id, customer_id", unique = true),
-        @Index(name = "idx_fk_staff_id", columnList = "staff_id"),
-        @Index(name = "idx_fk_customer_id", columnList = "customer_id")
-})
+@Table(name = "rental", schema = "sakila", indexes = {@Index(name = "idx_fk_inventory_id", columnList = "inventory_id"), @Index(name = "rental_date", columnList = "rental_date, inventory_id, customer_id", unique = true), @Index(name = "idx_fk_staff_id", columnList = "staff_id"), @Index(name = "idx_fk_customer_id", columnList = "customer_id")})
 public class Rental implements Serializable {
     @Serial
     private static final long serialVersionUID = -4344783819547775211L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "rental_id", nullable = false)
     private Integer id;
 
     @Column(name = "rental_date", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date rentalDate;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.ALL)
@@ -43,6 +40,7 @@ public class Rental implements Serializable {
     private Customer customer;
 
     @Column(name = "return_date")
+    @Temporal(TemporalType.TIMESTAMP)
     private Date returnDate;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.ALL)
@@ -50,6 +48,7 @@ public class Rental implements Serializable {
     private Staff staff;
 
     @Column(name = "last_update", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date lastUpdate;
 
     @OneToMany(mappedBy = "rental", cascade = CascadeType.ALL)

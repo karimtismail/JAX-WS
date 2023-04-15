@@ -8,7 +8,7 @@ import lombok.Setter;
 
 import java.io.Serial;
 import java.io.Serializable;
-import java.time.Instant;
+import java.util.Date;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -49,19 +49,18 @@ public class Address implements Serializable {
     private String phone;
 
     @Column(name = "last_update", nullable = false)
-    private Instant lastUpdate;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date lastUpdate;
 
     @OneToMany(mappedBy = "address")
     private Set<Staff> staff = new LinkedHashSet<>();
 
     @OneToMany(mappedBy = "address")
     private Set<Store> stores = new LinkedHashSet<>();
+
     @OneToMany(mappedBy = "address")
     private Set<Customer> customers = new LinkedHashSet<>();
 
-
-    //    TODO [JPA Buddy] create field to map the 'location' column
-//     Available actions: Define target Java type | Uncomment as is | Remove column mapping
     @Column(name = "location", columnDefinition = "GEOMETRY(65535) not null")
     private Object location;
 

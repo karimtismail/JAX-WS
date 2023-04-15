@@ -68,6 +68,7 @@ public class Film implements Serializable {
     private String specialFeatures;
 
     @Column(name = "last_update", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date lastUpdate;
 
     @OneToMany(mappedBy = "film", cascade = CascadeType.ALL)
@@ -78,5 +79,4 @@ public class Film implements Serializable {
 
     @OneToMany(mappedBy = "film", cascade = CascadeType.ALL)
     private List<FilmCategory> filmCategories = new ArrayList<>();
-
 }

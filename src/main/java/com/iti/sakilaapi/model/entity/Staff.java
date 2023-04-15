@@ -24,6 +24,7 @@ import java.util.List;
 public class Staff implements Serializable {
     @Serial
     private static final long serialVersionUID = 3112450445982800587L;
+
     @Id
     @Column(name = "staff_id", columnDefinition = "TINYINT UNSIGNED not null")
     private Short id;
@@ -58,6 +59,7 @@ public class Staff implements Serializable {
     private String password;
 
     @Column(name = "last_update", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date lastUpdate;
 
     @OneToMany(mappedBy = "staff", cascade = CascadeType.ALL)

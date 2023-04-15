@@ -23,6 +23,7 @@ import java.util.Date;
 public class Payment implements Serializable {
     @Serial
     private static final long serialVersionUID = 1030714145295331751L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "payment_id", columnDefinition = "SMALLINT UNSIGNED not null")
@@ -44,9 +45,10 @@ public class Payment implements Serializable {
     private BigDecimal amount;
 
     @Column(name = "payment_date", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date paymentDate;
 
     @Column(name = "last_update")
+    @Temporal(TemporalType.TIMESTAMP)
     private Date lastUpdate;
-
 }

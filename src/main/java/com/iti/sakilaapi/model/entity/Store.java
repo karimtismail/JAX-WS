@@ -20,6 +20,7 @@ import java.util.List;
 public class Store implements Serializable {
     @Serial
     private static final long serialVersionUID = 2003278164102149458L;
+
     @Id
     @Column(name = "store_id", columnDefinition = "TINYINT UNSIGNED not null")
     private Short id;

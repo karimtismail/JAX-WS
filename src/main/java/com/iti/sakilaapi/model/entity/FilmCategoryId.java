@@ -20,6 +20,7 @@ import java.util.Objects;
 public class FilmCategoryId implements Serializable {
     @Serial
     private static final long serialVersionUID = -2020378987441959681L;
+
     @Column(name = "film_id", columnDefinition = "SMALLINT UNSIGNED not null")
     private Integer filmId;
 
@@ -31,8 +32,7 @@ public class FilmCategoryId implements Serializable {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
         FilmCategoryId entity = (FilmCategoryId) o;
-        return Objects.equals(this.filmId, entity.filmId) &&
-                Objects.equals(this.categoryId, entity.categoryId);
+        return Objects.equals(this.filmId, entity.filmId) && Objects.equals(this.categoryId, entity.categoryId);
     }
 
     @Override

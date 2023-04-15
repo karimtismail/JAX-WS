@@ -8,7 +8,7 @@ import lombok.Setter;
 
 import java.io.Serial;
 import java.io.Serializable;
-import java.time.Instant;
+import java.util.Date;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -29,7 +29,8 @@ public class Category implements Serializable {
     private String name;
 
     @Column(name = "last_update", nullable = false)
-    private Instant lastUpdate;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date lastUpdate;
 
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
     private Set<FilmCategory> filmCategories = new LinkedHashSet<>();

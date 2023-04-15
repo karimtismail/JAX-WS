@@ -17,13 +17,11 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
-@Table(name = "inventory", schema = "sakila", indexes = {
-        @Index(name = "idx_fk_film_id", columnList = "film_id"),
-        @Index(name = "idx_store_id_film_id", columnList = "store_id, film_id")
-})
+@Table(name = "inventory", schema = "sakila", indexes = {@Index(name = "idx_fk_film_id", columnList = "film_id"), @Index(name = "idx_store_id_film_id", columnList = "store_id, film_id")})
 public class Inventory implements Serializable {
     @Serial
     private static final long serialVersionUID = 1251472708778901020L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "inventory_id", nullable = false)
@@ -38,6 +36,7 @@ public class Inventory implements Serializable {
     private Store store;
 
     @Column(name = "last_update", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date lastUpdate;
 
     @OneToMany(mappedBy = "inventory", cascade = CascadeType.ALL)

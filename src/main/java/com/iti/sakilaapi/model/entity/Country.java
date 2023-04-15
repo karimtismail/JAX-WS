@@ -8,7 +8,7 @@ import lombok.Setter;
 
 import java.io.Serial;
 import java.io.Serializable;
-import java.time.Instant;
+import java.util.Date;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -30,7 +30,8 @@ public class Country implements Serializable {
     private String country;
 
     @Column(name = "last_update", nullable = false)
-    private Instant lastUpdate;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date lastUpdate;
 
     @OneToMany(mappedBy = "country", cascade = CascadeType.ALL)
     private Set<City> cities = new LinkedHashSet<>();

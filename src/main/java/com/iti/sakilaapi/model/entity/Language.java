@@ -8,7 +8,7 @@ import lombok.Setter;
 
 import java.io.Serial;
 import java.io.Serializable;
-import java.time.Instant;
+import java.util.Date;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -21,6 +21,7 @@ import java.util.Set;
 public class Language implements Serializable {
     @Serial
     private static final long serialVersionUID = -95848265263623310L;
+
     @Id
     @Column(name = "language_id", columnDefinition = "TINYINT UNSIGNED not null")
     private Short id;
@@ -29,7 +30,8 @@ public class Language implements Serializable {
     private String name;
 
     @Column(name = "last_update", nullable = false)
-    private Instant lastUpdate;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date lastUpdate;
 
     @OneToMany(mappedBy = "language", cascade = CascadeType.ALL)
     private Set<Film> language_id_films = new LinkedHashSet<>();

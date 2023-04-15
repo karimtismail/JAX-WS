@@ -8,7 +8,7 @@ import lombok.Setter;
 
 import java.io.Serial;
 import java.io.Serializable;
-import java.time.Instant;
+import java.util.Date;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -19,6 +19,7 @@ import java.time.Instant;
 public class FilmCategory implements Serializable {
     @Serial
     private static final long serialVersionUID = -6336803551877621987L;
+
     @EmbeddedId
     private FilmCategoryId id;
 
@@ -33,6 +34,6 @@ public class FilmCategory implements Serializable {
     private Category category;
 
     @Column(name = "last_update", nullable = false)
-    private Instant lastUpdate;
-
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date lastUpdate;
 }

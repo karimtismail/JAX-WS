@@ -31,8 +31,7 @@ public class FilmActorId implements Serializable {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
         FilmActorId entity = (FilmActorId) o;
-        return Objects.equals(this.actorId, entity.actorId) &&
-                Objects.equals(this.filmId, entity.filmId);
+        return Objects.equals(this.actorId, entity.actorId) && Objects.equals(this.filmId, entity.filmId);
     }
 
     @Override

@@ -61,4 +61,40 @@
             implementation="com.iti.sakilaapi.api.FilmEndPoint"
             url-pattern="/ws/film"
     />
+    <!-- Film Actor -->
+    <endpoint
+            name="FilmActorEndpointService"
+            implementation="com.iti.sakilaapi.api.FilmActorEndpoint"
+            url-pattern="/ws/film_actor"
+    />
+    <!-- Film Category -->
+    <endpoint
+            name="FilmCategoryEndpointService"
+            implementation="com.iti.sakilaapi.api.FilmCategoryEndpoint"
+            url-pattern="/ws/film_category"
+    />
+    <!-- Film Text -->
+    <endpoint
+            name="FilmTextEndpointService"
+            implementation="com.iti.sakilaapi.api.FilmTextEndpoint"
+            url-pattern="/ws/film_text"
+    />
+    <!-- Language -->
+    <endpoint
+            name="LanguageEndpointService"
+            implementation="com.iti.sakilaapi.api.LanguageEndpoint"
+            url-pattern="/ws/language"
+    />
+    <!-- Payment -->
+    <endpoint
+            name="PaymentEndpointService"
+            implementation="com.iti.sakilaapi.api.PaymentEndpoint"
+            url-pattern="/ws/payment"
+    />
+    <!-- Rental -->
+    <endpoint
+            name="RentalEndPointService"
+            implementation="com.iti.sakilaapi.api.RentalEndPoint"
+            url-pattern="/ws/payment"
+    />
 </endpoints>
