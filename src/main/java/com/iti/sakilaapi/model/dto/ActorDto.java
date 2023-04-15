@@ -17,4 +17,7 @@ public class ActorDto implements Serializable {
     private String firstName;
     private String lastName;
     private Date lastUpdate;
+
+    public ActorDto(Integer id, String firstName, String lastName, Date lastUpdate) {
+    }
 }

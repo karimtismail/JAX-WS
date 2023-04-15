@@ -49,4 +49,16 @@
             implementation="com.iti.sakilaapi.api.StaffEndPoint"
             url-pattern="/ws/staff"
     />
+    <!-- Store -->
+    <endpoint
+            name="StoreEndpointService"
+            implementation="com.iti.sakilaapi.api.StoreEndPoint"
+            url-pattern="/ws/store"
+    />
+    <!-- Film -->
+    <endpoint
+            name="FilmEndpointService"
+            implementation="com.iti.sakilaapi.api.FilmEndPoint"
+            url-pattern="/ws/film"
+    />
 </endpoints>

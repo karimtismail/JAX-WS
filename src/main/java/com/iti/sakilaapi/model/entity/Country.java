@@ -32,7 +32,7 @@ public class Country implements Serializable {
     @Column(name = "last_update", nullable = false)
     private Instant lastUpdate;
 
-    @OneToMany(mappedBy = "country")
+    @OneToMany(mappedBy = "country", cascade = CascadeType.ALL)
     private Set<City> cities = new LinkedHashSet<>();
 
 }

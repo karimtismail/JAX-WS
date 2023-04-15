@@ -31,10 +31,10 @@ public class Language implements Serializable {
     @Column(name = "last_update", nullable = false)
     private Instant lastUpdate;
 
-    @OneToMany(mappedBy = "language")
+    @OneToMany(mappedBy = "language", cascade = CascadeType.ALL)
     private Set<Film> language_id_films = new LinkedHashSet<>();
 
-    @OneToMany(mappedBy = "originalLanguage")
+    @OneToMany(mappedBy = "originalLanguage", cascade = CascadeType.ALL)
     private Set<Film> orifinal_langauge_id_films = new LinkedHashSet<>();
 
 }

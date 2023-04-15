@@ -18,7 +18,7 @@ import java.util.List;
 @Setter
 @Entity
 @Table(name = "staff", schema = "sakila", indexes = {
-        @Index(name = "idx_fk_store_id", columnList = "store_id"),
+        @Index(name = "idx_fk_store_id", columnList = "manager_staff_id"),
         @Index(name = "idx_fk_address_id", columnList = "address_id")
 })
 public class Staff implements Serializable {
@@ -34,7 +34,7 @@ public class Staff implements Serializable {
     @Column(name = "last_name", nullable = false, length = 45)
     private String lastName;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id", nullable = false)
     private Address address;
 
@@ -44,8 +44,8 @@ public class Staff implements Serializable {
     @Column(name = "email", length = 50)
     private String email;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "store_id", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.ALL)
+    @JoinColumn(name = "manager_staff_id", nullable = false, referencedColumnName = "manager_staff_id")
     private Store store;
 
     @Column(name = "active", nullable = false)
@@ -60,12 +60,12 @@ public class Staff implements Serializable {
     @Column(name = "last_update", nullable = false)
     private Date lastUpdate;
 
-    @OneToMany(mappedBy = "staff")
+    @OneToMany(mappedBy = "staff", cascade = CascadeType.ALL)
     private List<Payment> payments = new ArrayList<>();
 
-    @OneToOne(mappedBy = "managerStaff")
+    @OneToOne(mappedBy = "managerStaff", cascade = CascadeType.ALL)
     private Store manager_staff_id_store;
 
-    @OneToMany(mappedBy = "staff")
+    @OneToMany(mappedBy = "staff", cascade = CascadeType.ALL)
     private List<Rental> rentals = new ArrayList<>();
 }

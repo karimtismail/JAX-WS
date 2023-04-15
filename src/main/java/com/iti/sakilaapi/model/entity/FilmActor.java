@@ -25,16 +25,15 @@ public class FilmActor implements Serializable {
     private FilmActorId id;
 
     @MapsId("actorId")
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.ALL)
     @JoinColumn(name = "actor_id", nullable = false)
     private Actor actor;
 
     @MapsId("filmId")
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.ALL)
     @JoinColumn(name = "film_id", nullable = false)
     private Film film;
 
     @Column(name = "last_update", nullable = false)
     private Instant lastUpdate;
-
 }

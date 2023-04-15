@@ -13,8 +13,8 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class StoreDto implements Serializable {
-    private Short storeId;
+    private Short id;
+//    private String managerName;
+    private AddressDto address;
     private Date lastUpdate;
-    private String storeAddress;
-    private String managerName;
 }

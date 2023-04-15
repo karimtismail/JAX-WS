@@ -1,7 +1,11 @@
 package com.iti.sakilaapi.listener;
 
+import java.util.logging.Logger;
+
 import com.iti.sakilaapi.util.JPAUtil;
+import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+
 import jakarta.servlet.ServletContextEvent;
 import jakarta.servlet.ServletContextListener;
 import jakarta.servlet.annotation.WebListener;
@@ -14,7 +18,7 @@ import jakarta.servlet.annotation.WebListener;
  */
 @WebListener
 public class ConnectionPoolContextListener implements ServletContextListener {
-
+    private static final Logger LOGGER = Logger.getLogger(ConnectionPoolContextListener.class.getName());
     private HikariDataSource dataSource;
 
     /**
@@ -26,18 +30,23 @@ public class ConnectionPoolContextListener implements ServletContextListener {
      */
     @Override
     public void contextInitialized(ServletContextEvent event) {
-        // create and configure the HikariCP data source
-        dataSource = new HikariDataSource();
-        dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/sakila");
-        dataSource.setUsername("sakilaApi_user");
-        dataSource.setPassword("1234");
-        dataSource.setIdleTimeout(60000);
-        dataSource.setMinimumIdle(10);
-        dataSource.setMaxLifetime(18000000);
-        dataSource.setMaximumPoolSize(010);
+        LOGGER.info("Initializing HikariCP data source for Sakila database...");
+
+        HikariConfig config = new HikariConfig();
+        config.setJdbcUrl("jdbc:mysql://localhost:3306/sakila");
+        config.setUsername("sakilaApi_user");
+        config.setPassword("1234");
+        config.setIdleTimeout(60000);
+        config.setMinimumIdle(10);
+        config.setMaxLifetime(18000000);
+        config.setMaximumPoolSize(10);
+
+        dataSource = new HikariDataSource(config);
 
         // store the data source in the servlet context
         event.getServletContext().setAttribute("dataSource", dataSource);
+
+        LOGGER.info("HikariCP data source for Sakila database initialized successfully.");
     }
 
     /**
@@ -48,8 +57,12 @@ public class ConnectionPoolContextListener implements ServletContextListener {
      */
     @Override
     public void contextDestroyed(ServletContextEvent event) {
+        LOGGER.info("Shutting down HikariCP data source for Sakila database...");
+
         // close the data source when the servlet context is destroyed
         dataSource.close();
         JPAUtil.closeEntityManagerFactory();
+
+        LOGGER.info("HikariCP data source for Sakila database shut down successfully.");
     }
 }

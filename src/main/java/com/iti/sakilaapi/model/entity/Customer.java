@@ -30,7 +30,7 @@ public class Customer implements Serializable {
     @Column(name = "customer_id", columnDefinition = "SMALLINT UNSIGNED not null")
     private Integer id;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.ALL)
     @JoinColumn(name = "store_id", nullable = false)
     private Store store;
 
@@ -43,7 +43,7 @@ public class Customer implements Serializable {
     @Column(name = "email", length = 50)
     private String email;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id", nullable = false)
     private Address address;
 
@@ -56,10 +56,10 @@ public class Customer implements Serializable {
     @Column(name = "last_update")
     private Instant lastUpdate;
 
-    @OneToMany(mappedBy = "customer")
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
     private Set<Payment> payments = new LinkedHashSet<>();
 
-    @OneToMany(mappedBy = "customer")
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
     private Set<Rental> rentals = new LinkedHashSet<>();
 
 }
