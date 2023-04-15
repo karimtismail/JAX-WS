@@ -20,7 +20,7 @@ public class RentalEndPoint {
 
     @WebResult(name = "Rental")
     @WebMethod(operationName = "getAllRental")
-    public List<RentalDto> getAllRental() {
+    public List<RentalDto> getRentalList() {
         return rentalService.findAll();
     }
 

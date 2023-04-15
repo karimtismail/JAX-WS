@@ -20,7 +20,7 @@ public class CustomerEndpoint {
 
     @WebResult(name = "Customer")
     @WebMethod(operationName = "getAllCustomer")
-    public List<CustomerDto> getAllCustomer() {
+    public List<CustomerDto> getCustomerList() {
         return customerService.findAll();
     }
 

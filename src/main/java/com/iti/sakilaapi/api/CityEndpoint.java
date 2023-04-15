@@ -20,7 +20,7 @@ public class CityEndpoint {
 
     @WebResult(name = "City")
     @WebMethod(operationName = "getAllCity")
-    public List<CityDto> getAllCity() {
+    public List<CityDto> getCityList() {
         return cityService.findAll();
     }
 

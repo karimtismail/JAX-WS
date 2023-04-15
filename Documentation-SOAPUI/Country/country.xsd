@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Published by XML-WS Runtime (https://github.com/eclipse-ee4j/metro-jax-ws). Runtime's version is XML-WS Runtime 4.0.1 git-revision#298606e.--><xs:schema version="1.0" targetNamespace="http://api.sakilaapi.iti.com/" xmlns:tns="http://api.sakilaapi.iti.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="countryDto" type="tns:countryDto"/>
+  <xs:element name="createCountry" type="tns:createCountry"/>
+  <xs:element name="createCountryResponse" type="tns:createCountryResponse"/>
+  <xs:element name="deleteCountryById" type="tns:deleteCountryById"/>
+  <xs:element name="deleteCountryByIdResponse" type="tns:deleteCountryByIdResponse"/>
+  <xs:element name="getAllCountry" type="tns:getAllCountry"/>
+  <xs:element name="getAllCountryResponse" type="tns:getAllCountryResponse"/>
+  <xs:element name="getCountryById" type="tns:getCountryById"/>
+  <xs:element name="getCountryByIdResponse" type="tns:getCountryByIdResponse"/>
+  <xs:element name="updateCountry" type="tns:updateCountry"/>
+  <xs:element name="updateCountryResponse" type="tns:updateCountryResponse"/>
+  <xs:complexType name="getAllCountry">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getAllCountryResponse">
+    <xs:sequence>
+      <xs:element name="Country" type="tns:countryDto" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="countryDto">
+    <xs:sequence>
+      <xs:element name="country" type="xs:string" minOccurs="0"/>
+      <xs:element name="countryId" type="xs:short" minOccurs="0"/>
+      <xs:element name="lastUpdate" type="xs:dateTime" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCountryById">
+    <xs:sequence>
+      <xs:element name="countryId" type="xs:short" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCountryByIdResponse">
+    <xs:sequence>
+      <xs:element name="Country" type="tns:countryDto" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deleteCountryById">
+    <xs:sequence>
+      <xs:element name="countryId" type="xs:short" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deleteCountryByIdResponse">
+    <xs:sequence>
+      <xs:element name="Country" type="tns:countryDto" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updateCountry">
+    <xs:sequence>
+      <xs:element name="country" type="tns:country" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="country">
+    <xs:sequence>
+      <xs:element name="cities" type="tns:city" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="country" type="xs:string" minOccurs="0"/>
+      <xs:element name="id" type="xs:int" minOccurs="0"/>
+      <xs:element name="lastUpdate" type="xs:dateTime" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="city">
+    <xs:sequence>
+      <xs:element name="addresses" type="tns:address" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="city" type="xs:string" minOccurs="0"/>
+      <xs:element name="country" type="tns:country" minOccurs="0"/>
+      <xs:element name="id" type="xs:int" minOccurs="0"/>
+      <xs:element name="lastUpdate" type="xs:dateTime" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="address">
+    <xs:sequence>
+      <xs:element name="address" type="xs:string" minOccurs="0"/>
+      <xs:element name="address2" type="xs:string" minOccurs="0"/>
+      <xs:element name="city" type="tns:city" minOccurs="0"/>
+      <xs:element name="customers" type="tns:customer" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="district" type="xs:string" minOccurs="0"/>
+      <xs:element name="id" type="xs:int" minOccurs="0"/>
+      <xs:element name="lastUpdate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="location" type="xs:anyType" minOccurs="0"/>
+      <xs:element name="phone" type="xs:string" minOccurs="0"/>
+      <xs:element name="postalCode" type="xs:string" minOccurs="0"/>
+      <xs:element name="staff" type="tns:staff" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="stores" type="tns:store" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="customer">
+    <xs:sequence>
+      <xs:element name="active" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="address" type="tns:address" minOccurs="0"/>
+      <xs:element name="createDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="email" type="xs:string" minOccurs="0"/>
+      <xs:element name="firstName" type="xs:string" minOccurs="0"/>
+      <xs:element name="id" type="xs:int" minOccurs="0"/>
+      <xs:element name="lastName" type="xs:string" minOccurs="0"/>
+      <xs:element name="lastUpdate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="payments" type="tns:payment" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="rentals" type="tns:rental" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="store" type="tns:store" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="payment">
+    <xs:sequence>
+      <xs:element name="amount" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="customer" type="tns:customer" minOccurs="0"/>
+      <xs:element name="id" type="xs:int" minOccurs="0"/>
+      <xs:element name="lastUpdate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="paymentDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="rental" type="tns:rental" minOccurs="0"/>
+      <xs:element name="staff" type="tns:staff" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="rental">
+    <xs:sequence>
+      <xs:element name="customer" type="tns:customer" minOccurs="0"/>
+      <xs:element name="id" type="xs:int" minOccurs="0"/>
+      <xs:element name="inventory" type="tns:inventory" minOccurs="0"/>
+      <xs:element name="lastUpdate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="payments" type="tns:payment" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="rentalDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="returnDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="staff" type="tns:staff" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="inventory">
+    <xs:sequence>
+      <xs:element name="film" type="tns:film" minOccurs="0"/>
+      <xs:element name="id" type="xs:int" minOccurs="0"/>
+      <xs:element name="lastUpdate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="rentals" type="tns:rental" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="store" type="tns:store" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="film">
+    <xs:sequence>
+      <xs:element name="description" type="xs:string" minOccurs="0"/>
+      <xs:element name="filmActors" type="tns:filmActor" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="filmCategories" type="tns:filmCategory" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="id" type="xs:int" minOccurs="0"/>
+      <xs:element name="inventories" type="tns:inventory" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="language" type="tns:language" minOccurs="0"/>
+      <xs:element name="lastUpdate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="length" type="xs:int" minOccurs="0"/>
+      <xs:element name="originalLanguage" type="tns:language" minOccurs="0"/>
+      <xs:element name="rating" type="xs:string" minOccurs="0"/>
+      <xs:element name="releaseYear" type="xs:int" minOccurs="0"/>
+      <xs:element name="rentalDuration" type="xs:short" minOccurs="0"/>
+      <xs:element name="rentalRate" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="replacementCost" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="specialFeatures" type="xs:string" minOccurs="0"/>
+      <xs:element name="title" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="filmActor">
+    <xs:sequence>
+      <xs:element name="actor" type="tns:actor" minOccurs="0"/>
+      <xs:element name="film" type="tns:film" minOccurs="0"/>
+      <xs:element name="id" type="tns:filmActorId" minOccurs="0"/>
+      <xs:element name="lastUpdate" type="xs:dateTime" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actor">
+    <xs:sequence>
+      <xs:element name="films" type="tns:filmActor" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="firstName" type="xs:string" minOccurs="0"/>
+      <xs:element name="id" type="xs:int" minOccurs="0"/>
+      <xs:element name="lastName" type="xs:string" minOccurs="0"/>
+      <xs:element name="lastUpdate" type="xs:dateTime" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="filmActorId">
+    <xs:sequence>
+      <xs:element name="actorId" type="xs:int" minOccurs="0"/>
+      <xs:element name="filmId" type="xs:int" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="filmCategory">
+    <xs:sequence>
+      <xs:element name="category" type="tns:category" minOccurs="0"/>
+      <xs:element name="film" type="tns:film" minOccurs="0"/>
+      <xs:element name="id" type="tns:filmCategoryId" minOccurs="0"/>
+      <xs:element name="lastUpdate" type="xs:dateTime" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="category">
+    <xs:sequence>
+      <xs:element name="filmCategories" type="tns:filmCategory" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="id" type="xs:short" minOccurs="0"/>
+      <xs:element name="lastUpdate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="filmCategoryId">
+    <xs:sequence>
+      <xs:element name="categoryId" type="xs:short" minOccurs="0"/>
+      <xs:element name="filmId" type="xs:int" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="language">
+    <xs:sequence>
+      <xs:element name="id" type="xs:short" minOccurs="0"/>
+      <xs:element name="language_id_films" type="tns:film" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="lastUpdate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="orifinal_langauge_id_films" type="tns:film" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="store">
+    <xs:sequence>
+      <xs:element name="address" type="tns:address" minOccurs="0"/>
+      <xs:element name="customers" type="tns:customer" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="id" type="xs:short" minOccurs="0"/>
+      <xs:element name="inventories" type="tns:inventory" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="lastUpdate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="staff" type="tns:staff" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="staff">
+    <xs:sequence>
+      <xs:element name="active" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="address" type="tns:address" minOccurs="0"/>
+      <xs:element name="email" type="xs:string" minOccurs="0"/>
+      <xs:element name="firstName" type="xs:string" minOccurs="0"/>
+      <xs:element name="id" type="xs:short" minOccurs="0"/>
+      <xs:element name="lastName" type="xs:string" minOccurs="0"/>
+      <xs:element name="lastUpdate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="manager_staff_id_store" type="tns:store" minOccurs="0"/>
+      <xs:element name="password" type="xs:string" minOccurs="0"/>
+      <xs:element name="payments" type="tns:payment" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="picture" type="xs:base64Binary" minOccurs="0"/>
+      <xs:element name="rentals" type="tns:rental" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="store" type="tns:store" minOccurs="0"/>
+      <xs:element name="username" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updateCountryResponse">
+    <xs:sequence>
+      <xs:element name="Country" type="tns:countryDto" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createCountry">
+    <xs:sequence>
+      <xs:element name="country" type="tns:country" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createCountryResponse">
+    <xs:sequence>
+      <xs:element name="Country" type="tns:countryDto" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

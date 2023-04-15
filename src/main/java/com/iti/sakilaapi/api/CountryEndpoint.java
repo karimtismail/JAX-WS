@@ -20,7 +20,7 @@ public class CountryEndpoint {
 
     @WebResult(name = "Country")
     @WebMethod(operationName = "getAllCountry")
-    public List<CountryDto> getAllCountry() {
+    public List<CountryDto> getCountryList() {
         return countryService.findAll();
     }
 

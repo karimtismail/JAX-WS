@@ -20,7 +20,7 @@ public class CategoryEndpoint {
 
     @WebResult(name = "Category")
     @WebMethod(operationName = "getAllCategory")
-    public List<CategoryDto> getAllCategory() {
+    public List<CategoryDto> getCategoryList() {
         return categoryService.findAll();
     }
 

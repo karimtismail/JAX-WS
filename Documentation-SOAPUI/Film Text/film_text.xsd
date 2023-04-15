@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Published by XML-WS Runtime (https://github.com/eclipse-ee4j/metro-jax-ws). Runtime's version is XML-WS Runtime 4.0.1 git-revision#298606e.--><xs:schema version="1.0" targetNamespace="http://api.sakilaapi.iti.com/" xmlns:tns="http://api.sakilaapi.iti.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="createFilmText" type="tns:createFilmText"/>
+  <xs:element name="createFilmTextResponse" type="tns:createFilmTextResponse"/>
+  <xs:element name="deleteFilmTextById" type="tns:deleteFilmTextById"/>
+  <xs:element name="deleteFilmTextByIdResponse" type="tns:deleteFilmTextByIdResponse"/>
+  <xs:element name="filmTextDto" type="tns:filmTextDto"/>
+  <xs:element name="getAllFilmText" type="tns:getAllFilmText"/>
+  <xs:element name="getAllFilmTextResponse" type="tns:getAllFilmTextResponse"/>
+  <xs:element name="getFilmTextById" type="tns:getFilmTextById"/>
+  <xs:element name="getFilmTextByIdResponse" type="tns:getFilmTextByIdResponse"/>
+  <xs:element name="updateFilmText" type="tns:updateFilmText"/>
+  <xs:element name="updateFilmTextResponse" type="tns:updateFilmTextResponse"/>
+  <xs:complexType name="createFilmText">
+    <xs:sequence>
+      <xs:element name="filmText" type="tns:filmText" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="filmText">
+    <xs:sequence>
+      <xs:element name="description" type="xs:string" minOccurs="0"/>
+      <xs:element name="id" type="xs:short" minOccurs="0"/>
+      <xs:element name="title" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createFilmTextResponse">
+    <xs:sequence>
+      <xs:element name="FilmText" type="tns:filmTextDto" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="filmTextDto">
+    <xs:sequence>
+      <xs:element name="description" type="xs:string" minOccurs="0"/>
+      <xs:element name="filmId" type="xs:short" minOccurs="0"/>
+      <xs:element name="title" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getFilmTextById">
+    <xs:sequence>
+      <xs:element name="filmTextId" type="xs:short" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getFilmTextByIdResponse">
+    <xs:sequence>
+      <xs:element name="FilmText" type="tns:filmTextDto" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updateFilmText">
+    <xs:sequence>
+      <xs:element name="filmText" type="tns:filmText" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updateFilmTextResponse">
+    <xs:sequence>
+      <xs:element name="FilmText" type="tns:filmTextDto" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAllFilmText">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getAllFilmTextResponse">
+    <xs:sequence>
+      <xs:element name="FilmText" type="tns:filmTextDto" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deleteFilmTextById">
+    <xs:sequence>
+      <xs:element name="filmTextId" type="xs:short" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deleteFilmTextByIdResponse">
+    <xs:sequence>
+      <xs:element name="FilmText" type="tns:filmTextDto" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -20,7 +20,7 @@ public class PaymentEndpoint {
 
     @WebResult(name = "Payment")
     @WebMethod(operationName = "getAllPayment")
-    public List<PaymentDto> getAllPayment() {
+    public List<PaymentDto> getPaymentList() {
         return paymentService.findAll();
     }
 

@@ -64,7 +64,6 @@
             <artifactId>jackson-databind</artifactId>
             <version>2.15.0-rc2</version>
         </dependency>
-
         <!-- Database Dependencies -->
         <!-- Jakarta Persistence API -->
         <dependency>
@@ -127,36 +126,6 @@
             <artifactId>jaxws-rt</artifactId>
             <version>4.0.1</version>
         </dependency>
-        <!--        <dependency>-->
-        <!--            <groupId>com.sun.xml.ws</groupId>-->
-        <!--            <artifactId>webservices-rt</artifactId>-->
-        <!--            <version>@metro.version@</version>-->
-        <!--        </dependency>-->
-        <!--        <dependency>-->
-        <!--            <groupId>org.glassfish.metro</groupId>-->
-        <!--            <artifactId>webservices-tools</artifactId>-->
-        <!--            <version>4.0.2</version>-->
-        <!--        </dependency>-->
-
-        <!--        &lt;!&ndash;        &ndash;&gt;-->
-        <!--        <dependency>-->
-        <!--            <groupId>org.glassfish.metro</groupId>-->
-        <!--            <artifactId>webservices-rt</artifactId>-->
-        <!--            <version>4.0.2</version>-->
-        <!--        </dependency>-->
-
-        <!--        <dependency>-->
-        <!--            <groupId>org.glassfish.metro</groupId>-->
-        <!--            <artifactId>webservices-api</artifactId>-->
-        <!--            <version>4.0.2</version>-->
-        <!--        </dependency>-->
-
-        <!--        <dependency>-->
-        <!--            <groupId>com.moparisthebest.aptIn16</groupId>-->
-        <!--            <artifactId>apt-mirror-api</artifactId>-->
-        <!--            <version>0.1</version>-->
-        <!--        </dependency>-->
-
     </dependencies>
 
     <build>

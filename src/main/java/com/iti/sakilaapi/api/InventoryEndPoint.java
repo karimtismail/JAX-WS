@@ -20,7 +20,7 @@ public class InventoryEndPoint {
 
     @WebResult(name = "Inventory")
     @WebMethod(operationName = "getAllInventory")
-    public List<InventoryDto> getAllInventory() {
+    public List<InventoryDto> getInventoryList() {
         return inventoryService.findAll();
     }
 

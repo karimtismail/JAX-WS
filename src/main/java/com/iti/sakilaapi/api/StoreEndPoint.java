@@ -20,7 +20,7 @@ public class StoreEndPoint {
 
     @WebResult(name = "Store")
     @WebMethod(operationName = "getAllStore")
-    public List<StoreDto> getAllStore() {
+    public List<StoreDto> getStoreList() {
         return storeService.findAll();
     }
 

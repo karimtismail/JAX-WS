@@ -20,7 +20,7 @@ public class AddressEndpoint {
 
     @WebResult(name = "Address")
     @WebMethod(operationName = "getAllAddress")
-    public List<AddressDto> getAllAddress() {
+    public List<AddressDto> getAddressList() {
         return addressService.findAll();
     }
 

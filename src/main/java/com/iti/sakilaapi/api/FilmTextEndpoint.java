@@ -20,7 +20,7 @@ public class FilmTextEndpoint {
 
     @WebResult(name = "FilmText")
     @WebMethod(operationName = "getAllFilmText")
-    public List<FilmTextDto> getAllFilmText() {
+    public List<FilmTextDto> getFilmTextList() {
         return filmTextService.findAll();
     }
 

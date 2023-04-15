@@ -95,6 +95,6 @@
     <endpoint
             name="RentalEndPointService"
             implementation="com.iti.sakilaapi.api.RentalEndPoint"
-            url-pattern="/ws/payment"
+            url-pattern="/ws/rental"
     />
 </endpoints>

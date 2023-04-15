@@ -20,7 +20,7 @@ public class LanguageEndpoint {
 
     @WebResult(name = "Language")
     @WebMethod(operationName = "getAllLanguage")
-    public List<LanguageDto> getAllLanguage() {
+    public List<LanguageDto> getLanguageList() {
         return languageService.findAll();
     }
 

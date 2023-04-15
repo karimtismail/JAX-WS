@@ -20,7 +20,7 @@ public class ActorEndpoint {
 
     @WebResult(name = "Actor")
     @WebMethod(operationName = "getAllActors")
-    public List<ActorDto> getAllActors() {
+    public List<ActorDto> getActorsList() {
         return actorService.findAll();
     }
 

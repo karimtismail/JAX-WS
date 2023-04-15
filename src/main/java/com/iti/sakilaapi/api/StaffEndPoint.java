@@ -20,7 +20,7 @@ public class StaffEndPoint {
 
     @WebResult(name = "Staff")
     @WebMethod(operationName = "getAllStaff")
-    public List<StaffDto> getAllStaff() {
+    public List<StaffDto> getStaffList() {
         return staffService.findAll();
     }
 

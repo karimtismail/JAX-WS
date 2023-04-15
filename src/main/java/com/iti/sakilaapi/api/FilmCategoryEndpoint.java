@@ -20,13 +20,13 @@ public class FilmCategoryEndpoint {
 
     @WebResult(name = "FilmCategory")
     @WebMethod(operationName = "getAllFilmCategory")
-    public List<FilmCategoryDto> getAllFilmCategory() {
+    public List<FilmCategoryDto> getFilmCategoryList() {
         return filmCategoryService.findAll();
     }
 
     @WebResult(name = "FilmCategory")
     @WebMethod(operationName = "getFilmCategoryById")
-    public FilmCategoryDto getFilmCategoryById(@WebParam(name = "filmCategoryId") Short filmCategoryId) {
+    public FilmCategoryDto findFilmCategoryById(@WebParam(name = "filmCategoryId") Short filmCategoryId) {
         return filmCategoryService.findById(filmCategoryId);
     }
 
@@ -44,7 +44,7 @@ public class FilmCategoryEndpoint {
 
     @WebResult(name = "FilmCategory")
     @WebMethod(operationName = "deleteFilmCategoryById")
-    public FilmCategoryDto deleteFilmCategoryById(@WebParam(name = "filmCategoryId") Short filmCategoryId) {
+    public FilmCategoryDto removeFilmCategoryById(@WebParam(name = "filmCategoryId") Short filmCategoryId) {
         return filmCategoryService.deleteById(filmCategoryId);
     }
 }
