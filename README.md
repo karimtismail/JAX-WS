@@ -74,7 +74,7 @@ To deploy the project, follow these steps:
 
 ## Sakila Database Information
 
-Sure! Sakila is a sample database that provides a schema for a DVD rental store. The database includes tables for
+Sakila is a sample database that provides a schema for a DVD rental store. The database includes tables for
 customers, inventory, rentals, payments, staff, and stores. Here's a brief description of some of the tables: brief
 overview of each table:
 
