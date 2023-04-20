@@ -1,19 +1,19 @@
-package com.iti.sakilaapi.model.dto;
+package com.iti.sakilaapi.model.dto.response;
 
 import jakarta.xml.bind.annotation.XmlRootElement;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.io.Serializable;
-import java.util.Date;
 
-@XmlRootElement
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
-public class CategoryDto implements Serializable {
+@XmlRootElement
+public class FilmCategoryIdDTOResp implements Serializable {
+    private Integer filmId;
     private Short categoryId;
-    private String name;
-    private Date lastUpdate;
 }

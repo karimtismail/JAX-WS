@@ -1,18 +1,20 @@
-package com.iti.sakilaapi.model.dto;
+package com.iti.sakilaapi.model.dto.response;
 
 import jakarta.xml.bind.annotation.XmlRootElement;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.io.Serializable;
 
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
 @XmlRootElement
-public class FilmTextDto implements Serializable {
-    private Short filmId;
+public class FilmTextDTOResp implements Serializable {
+    private Short id;
     private String title;
     private String description;
 }

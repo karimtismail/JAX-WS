@@ -1,4 +1,5 @@
-package com.iti.sakilaapi.model.dto;
+package com.iti.sakilaapi.model.dto.requests;
+
 
 import jakarta.xml.bind.annotation.XmlRootElement;
 import lombok.AllArgsConstructor;
@@ -6,18 +7,18 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.Instant;
 
-@XmlRootElement
-@NoArgsConstructor
-@AllArgsConstructor
 @Data
-public class AddressDto implements Serializable {
-    private Short addressId;
+@AllArgsConstructor
+@NoArgsConstructor
+@XmlRootElement
+public class AddressDTOReq implements Serializable {
     private String address;
     private String address2;
     private String district;
+    private Integer cityId;
     private String postalCode;
     private String phone;
-    private Date lastUpdate;
+    private Instant lastUpdate;
 }

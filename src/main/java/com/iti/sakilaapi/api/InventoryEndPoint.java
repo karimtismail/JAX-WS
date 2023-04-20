@@ -1,13 +1,14 @@
 package com.iti.sakilaapi.api;
 
-import com.iti.sakilaapi.model.dto.InventoryDto;
-import com.iti.sakilaapi.model.entity.Inventory;
+import com.iti.sakilaapi.model.dto.requests.InventoryDTOReq;
+import com.iti.sakilaapi.model.dto.response.InventoryDTOResp;
 import com.iti.sakilaapi.service.InventoryService;
 import jakarta.jws.WebMethod;
 import jakarta.jws.WebParam;
 import jakarta.jws.WebResult;
 import jakarta.jws.WebService;
 
+import java.time.Instant;
 import java.util.List;
 
 @WebService
@@ -15,36 +16,38 @@ public class InventoryEndPoint {
     private final InventoryService inventoryService;
 
     public InventoryEndPoint() {
-        inventoryService = new InventoryService(Inventory.class, InventoryDto.class);
+        inventoryService = new InventoryService();
     }
 
     @WebResult(name = "Inventory")
     @WebMethod(operationName = "getAllInventory")
-    public List<InventoryDto> getInventoryList() {
+    public List<InventoryDTOResp> getInventoryList() {
         return inventoryService.findAll();
     }
 
     @WebResult(name = "Inventory")
     @WebMethod(operationName = "getInventoryById")
-    public InventoryDto getInventoryById(@WebParam(name = "inventoryId") Short inventoryId) {
+    public InventoryDTOResp getInventoryById(@WebParam(name = "inventoryId") Integer inventoryId) {
         return inventoryService.findById(inventoryId);
     }
 
     @WebResult(name = "Inventory")
     @WebMethod(operationName = "createNewInventory")
-    public InventoryDto createInventory(@WebParam(name = "inventory") Inventory inventory) {
+    public InventoryDTOResp createInventory(@WebParam(name = "inventory") InventoryDTOReq inventory) {
+        inventory.setLastUpdate(Instant.now());
         return inventoryService.save(inventory);
     }
 
     @WebResult(name = "Inventory")
     @WebMethod(operationName = "updateExistingInventory")
-    public InventoryDto updateInventory(@WebParam(name = "inventory") Inventory inventory) {
-        return inventoryService.update(inventory);
+    public InventoryDTOResp updateInventory(@WebParam(name = "id") Integer id, @WebParam(name = "inventory") InventoryDTOReq inventory) throws Exception {
+        inventory.setLastUpdate(Instant.now());
+        return inventoryService.update(id, inventory);
     }
 
     @WebResult(name = "Inventory")
     @WebMethod(operationName = "deleteInventoryById")
-    public InventoryDto deleteInventoryById(@WebParam(name = "inventoryId") Short inventoryId) {
+    public InventoryDTOResp deleteInventoryById(@WebParam(name = "inventoryId") Integer inventoryId) throws Exception {
         return inventoryService.deleteById(inventoryId);
     }
 }

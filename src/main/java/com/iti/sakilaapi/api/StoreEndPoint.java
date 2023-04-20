@@ -1,7 +1,7 @@
 package com.iti.sakilaapi.api;
 
-import com.iti.sakilaapi.model.dto.StoreDto;
-import com.iti.sakilaapi.model.entity.Store;
+import com.iti.sakilaapi.model.dto.requests.StoreDTOReq;
+import com.iti.sakilaapi.model.dto.response.StoreDTOResp;
 import com.iti.sakilaapi.service.StoreService;
 import jakarta.jws.WebMethod;
 import jakarta.jws.WebParam;
@@ -15,36 +15,36 @@ public class StoreEndPoint {
     private final StoreService storeService;
 
     public StoreEndPoint() {
-        storeService = new StoreService(Store.class, StoreDto.class);
+        storeService = new StoreService();
     }
 
     @WebResult(name = "Store")
     @WebMethod(operationName = "getAllStore")
-    public List<StoreDto> getStoreList() {
+    public List<StoreDTOResp> getStoreList() {
         return storeService.findAll();
     }
 
     @WebResult(name = "Store")
     @WebMethod(operationName = "getStoreById")
-    public StoreDto getStoreById(@WebParam(name = "storeId") Short storeId) {
+    public StoreDTOResp getStoreById(@WebParam(name = "storeId") Integer storeId) {
         return storeService.findById(storeId);
     }
 
     @WebResult(name = "Store")
     @WebMethod(operationName = "createNewStore")
-    public StoreDto createStore(@WebParam(name = "store") Store store) {
+    public StoreDTOResp createStore(@WebParam(name = "store") StoreDTOReq store) {
         return storeService.save(store);
     }
 
     @WebResult(name = "Store")
     @WebMethod(operationName = "updateExistingStore")
-    public StoreDto updateStore(@WebParam(name = "store") Store store) {
-        return storeService.update(store);
+    public StoreDTOResp updateStore(@WebParam(name = "id") Integer id, @WebParam(name = "store") StoreDTOReq store) throws Exception {
+        return storeService.update(id, store);
     }
 
     @WebResult(name = "Store")
     @WebMethod(operationName = "deleteStoreById")
-    public StoreDto deleteStoreById(@WebParam(name = "storeId") Short storeId) {
+    public StoreDTOResp deleteStoreById(@WebParam(name = "storeId") Integer storeId) throws Exception {
         return storeService.deleteById(storeId);
     }
 }

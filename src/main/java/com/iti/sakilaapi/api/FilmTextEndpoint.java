@@ -1,7 +1,7 @@
 package com.iti.sakilaapi.api;
 
-import com.iti.sakilaapi.model.dto.FilmTextDto;
-import com.iti.sakilaapi.model.entity.FilmText;
+import com.iti.sakilaapi.model.dto.requests.FilmTextDTOReq;
+import com.iti.sakilaapi.model.dto.response.FilmTextDTOResp;
 import com.iti.sakilaapi.service.FilmTextService;
 import jakarta.jws.WebMethod;
 import jakarta.jws.WebParam;
@@ -15,36 +15,36 @@ public class FilmTextEndpoint {
     private final FilmTextService filmTextService;
 
     public FilmTextEndpoint() {
-        filmTextService = new FilmTextService(FilmText.class, FilmTextDto.class);
+        filmTextService = new FilmTextService();
     }
 
     @WebResult(name = "FilmText")
     @WebMethod(operationName = "getAllFilmText")
-    public List<FilmTextDto> getFilmTextList() {
+    public List<FilmTextDTOResp> getFilmTextList() {
         return filmTextService.findAll();
     }
 
     @WebResult(name = "FilmText")
     @WebMethod(operationName = "getFilmTextById")
-    public FilmTextDto getFilmTextById(@WebParam(name = "filmTextId") Short filmTextId) {
+    public FilmTextDTOResp getFilmTextById(@WebParam(name = "filmTextId") Integer filmTextId) {
         return filmTextService.findById(filmTextId);
     }
 
     @WebResult(name = "FilmText")
     @WebMethod(operationName = "createFilmText")
-    public FilmTextDto createFilmText(@WebParam(name = "filmText") FilmText filmText) {
+    public FilmTextDTOResp createFilmText(@WebParam(name = "filmText") FilmTextDTOReq filmText) {
         return filmTextService.save(filmText);
     }
 
     @WebResult(name = "FilmText")
     @WebMethod(operationName = "updateFilmText")
-    public FilmTextDto updateFilmText(@WebParam(name = "filmText") FilmText filmText) {
-        return filmTextService.update(filmText);
+    public FilmTextDTOResp updateFilmText(@WebParam(name = "id") Integer id, @WebParam(name = "filmText") FilmTextDTOReq filmText) throws Exception {
+        return filmTextService.update(id, filmText);
     }
 
     @WebResult(name = "FilmText")
     @WebMethod(operationName = "deleteFilmTextById")
-    public FilmTextDto deleteFilmTextById(@WebParam(name = "filmTextId") Short filmTextId) {
+    public FilmTextDTOResp deleteFilmTextById(@WebParam(name = "filmTextId") Integer filmTextId) throws Exception {
         return filmTextService.deleteById(filmTextId);
     }
 }

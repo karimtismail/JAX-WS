@@ -1,13 +1,14 @@
 package com.iti.sakilaapi.api;
 
-import com.iti.sakilaapi.model.dto.CategoryDto;
-import com.iti.sakilaapi.model.entity.Category;
+import com.iti.sakilaapi.model.dto.requests.CategoryDTOReq;
+import com.iti.sakilaapi.model.dto.response.CategoryDTOResp;
 import com.iti.sakilaapi.service.CategoryService;
 import jakarta.jws.WebMethod;
 import jakarta.jws.WebParam;
 import jakarta.jws.WebResult;
 import jakarta.jws.WebService;
 
+import java.time.Instant;
 import java.util.List;
 
 @WebService
@@ -15,36 +16,38 @@ public class CategoryEndpoint {
     private final CategoryService categoryService;
 
     public CategoryEndpoint() {
-        categoryService = new CategoryService(Category.class, CategoryDto.class);
+        categoryService = new CategoryService();
     }
 
     @WebResult(name = "Category")
     @WebMethod(operationName = "getAllCategory")
-    public List<CategoryDto> getCategoryList() {
+    public List<CategoryDTOResp> getCategoryList() {
         return categoryService.findAll();
     }
 
     @WebResult(name = "Category")
     @WebMethod(operationName = "getCategoryById")
-    public CategoryDto getCategoryById(@WebParam(name = "categoryId") Short categoryId) {
+    public CategoryDTOResp getCategoryById(@WebParam(name = "categoryId") Integer categoryId) {
         return categoryService.findById(categoryId);
     }
 
     @WebResult(name = "Category")
     @WebMethod(operationName = "createCategory")
-    public CategoryDto createCategory(@WebParam(name = "category") Category category) {
+    public CategoryDTOResp createCategory(@WebParam(name = "category") CategoryDTOReq category) {
+        category.setLastUpdate(Instant.now());
         return categoryService.save(category);
     }
 
     @WebResult(name = "Category")
     @WebMethod(operationName = "updateCategory")
-    public CategoryDto updateCategory(@WebParam(name = "category") Category category) {
-        return categoryService.update(category);
+    public CategoryDTOResp updateCategory(@WebParam(name = "id") Integer id, @WebParam(name = "category") CategoryDTOReq category) throws Exception {
+        category.setLastUpdate(Instant.now());
+        return categoryService.update(id, category);
     }
 
     @WebResult(name = "Category")
     @WebMethod(operationName = "deleteCategoryById")
-    public CategoryDto deleteCategoryById(@WebParam(name = "categoryId") Short categoryId) {
+    public CategoryDTOResp deleteCategoryById(@WebParam(name = "categoryId") Integer categoryId) throws Exception {
         return categoryService.deleteById(categoryId);
     }
 }

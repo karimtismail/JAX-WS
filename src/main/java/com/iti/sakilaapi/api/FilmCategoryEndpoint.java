@@ -1,13 +1,14 @@
 package com.iti.sakilaapi.api;
 
-import com.iti.sakilaapi.model.dto.FilmCategoryDto;
-import com.iti.sakilaapi.model.entity.FilmCategory;
+import com.iti.sakilaapi.model.dto.requests.FilmCategoryDTOReq;
+import com.iti.sakilaapi.model.dto.response.FilmCategoryDTOResp;
 import com.iti.sakilaapi.service.FilmCategoryService;
 import jakarta.jws.WebMethod;
 import jakarta.jws.WebParam;
 import jakarta.jws.WebResult;
 import jakarta.jws.WebService;
 
+import java.time.Instant;
 import java.util.List;
 
 @WebService
@@ -15,36 +16,38 @@ public class FilmCategoryEndpoint {
     private final FilmCategoryService filmCategoryService;
 
     public FilmCategoryEndpoint() {
-        filmCategoryService = new FilmCategoryService(FilmCategory.class, FilmCategoryDto.class);
+        filmCategoryService = new FilmCategoryService();
     }
 
     @WebResult(name = "FilmCategory")
     @WebMethod(operationName = "getAllFilmCategory")
-    public List<FilmCategoryDto> getFilmCategoryList() {
+    public List<FilmCategoryDTOResp> getFilmCategoryList() {
         return filmCategoryService.findAll();
     }
 
     @WebResult(name = "FilmCategory")
     @WebMethod(operationName = "getFilmCategoryById")
-    public FilmCategoryDto findFilmCategoryById(@WebParam(name = "filmCategoryId") Short filmCategoryId) {
+    public FilmCategoryDTOResp findFilmCategoryById(@WebParam(name = "filmCategoryId") Integer filmCategoryId) {
         return filmCategoryService.findById(filmCategoryId);
     }
 
     @WebResult(name = "FilmCategory")
     @WebMethod(operationName = "createNewFilmCategory")
-    public FilmCategoryDto createFilmCategory(@WebParam(name = "filmCategory") FilmCategory filmCategory) {
+    public FilmCategoryDTOResp createFilmCategory(@WebParam(name = "filmCategory") FilmCategoryDTOReq filmCategory) {
+        filmCategory.setLastUpdate(Instant.now());
         return filmCategoryService.save(filmCategory);
     }
 
     @WebResult(name = "FilmCategory")
     @WebMethod(operationName = "updateExistingFilmCategory")
-    public FilmCategoryDto updateFilmCategory(@WebParam(name = "filmCategory") FilmCategory filmCategory) {
-        return filmCategoryService.update(filmCategory);
+    public FilmCategoryDTOResp updateFilmCategory(@WebParam(name = "id") Integer id, @WebParam(name = "filmCategory") FilmCategoryDTOReq filmCategory) throws Exception {
+        filmCategory.setLastUpdate(Instant.now());
+        return filmCategoryService.update(id, filmCategory);
     }
 
     @WebResult(name = "FilmCategory")
     @WebMethod(operationName = "deleteFilmCategoryById")
-    public FilmCategoryDto removeFilmCategoryById(@WebParam(name = "filmCategoryId") Short filmCategoryId) {
+    public FilmCategoryDTOResp removeFilmCategoryById(@WebParam(name = "filmCategoryId") Integer filmCategoryId) throws Exception {
         return filmCategoryService.deleteById(filmCategoryId);
     }
 }
