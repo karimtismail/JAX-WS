@@ -22,6 +22,7 @@ public class Store implements Serializable {
     private static final long serialVersionUID = 2003278164102149458L;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "store_id", columnDefinition = "TINYINT UNSIGNED not null")
     private Short id;
 
