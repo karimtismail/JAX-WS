@@ -8,7 +8,7 @@ Sakila database and retrieve the desired information.
 Our application is built with Java 17 and Apache Maven 3.8.6, and uses MySQL for the database. To install and deploy the
 project, clone the repository to your local machine and follow the instructions in the README file.
 
-The project is equipped with a Postman documenter to facilitate API documentation, which is accessible at https://documenter.getpostman.com/view/25978326/2s93XsYS7a. Additionally, all services are documented in the "documentation" folder.
+The project is equipped with a Postman documenter to facilitate API documentation, which is accessible at [DOCUMENTATION USING POSTMAN](https://documenter.getpostman.com/view/25978326/2s93XsYS7a). Additionally, all services are documented in the "documentation" folder.
 
 ## Technologies Used:
 
@@ -69,8 +69,7 @@ To deploy the project, follow these steps:
 ## Usage/Examples
 
 - Open a web browser and go to http://localhost:8080/sakila-api/ws/{actor}.
-- The application should be up and running. You can now use it to interact with the Sakila database using SOAP and REST
-  web services.
+- The application should be up and running. You can now use it to interact with the Sakila database using SOAP web services.
 
 ## Sakila Database Information
 
